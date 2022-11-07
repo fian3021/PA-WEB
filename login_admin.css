@@ -44,6 +44,7 @@ nav {
     color:black;
     font-weight: bold;
     cursor: pointer;
+    border: solid #4D96FF;
 }
 
 .content h1{
