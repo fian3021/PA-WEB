@@ -8,8 +8,15 @@
 body {
     font-family: 'Rubik', sans-serif;
     overflow-x: hidden;
+    background-image: url(https://pantirapih.or.id/rspr/wp-content/uploads/2022/04/imunisasi-anak-2.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-x: center;
+    position: relative;
+    transition: .2s ease;
 }
 
+/* NAVIGATION */
 nav {
     display: flex;
     justify-content: space-around;
@@ -20,8 +27,8 @@ nav {
     margin: 0px;
     position: -webkit-sticky;
     position: sticky;
+    top: -1px;
 }
-
 .icon {
     font-family: 'Oswald', sans-serif;
     font-size: 25px;
@@ -29,29 +36,24 @@ nav {
     bottom: 2px;
     position: relative;
 }
-
 .menu-1 {
     display: flex;
     justify-content: space-around;
     width: 25%;
 }
-
 .menu-2 {
     display: flex;
     justify-content: space-around;
     width: 15%;
 }
-
 nav ul li a {
     color: #ffffff;
     text-decoration: none;
     font-size: 17px;
 }
-
 nav ul li a:hover {
     color: #dcf5dfcd;
 }
-
 /* Hamburger Menu */
 .menu-toggle {
     display: none;
@@ -60,7 +62,6 @@ nav ul li a:hover {
     justify-content: space-between;
     position: relative;
 }
-
 .menu-toggle input {
     position: absolute;
     width: 55px;
@@ -71,7 +72,6 @@ nav ul li a:hover {
     cursor: pointer;
     z-index: 2;
 }
-
 .menu-toggle span {
     display: block;
     width: 30px;
@@ -79,28 +79,110 @@ nav ul li a:hover {
     background-color: #ffffff;
     transition: all 0.2s;
 }
-
 /* Hamburger Menu Animation*/
 .menu-toggle span:nth-child(2){
     transform-origin: 0 0;
 }
-
 .menu-toggle span:nth-child(4){
     transform-origin: 0 100%;
 }
-
 .menu-toggle input:checked ~ span:nth-child(2) {
     transform: rotate(45deg) translate(-1px, -1px);
 }
-
 .menu-toggle input:checked ~ span:nth-child(3) {
     opacity: 0;
     transform: scale(0);
 }
-
 .menu-toggle input:checked ~ span:nth-child(4) {
     transform: rotate(-45deg) translate(-1px, 0px);
 }
+
+/* MAIN CONTENT */
+/* Content-1 */
+.main-content {
+    width: 100%;
+}
+.content-1 {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 10px;
+    align-items: center;
+    height: 600px;
+    background-color: #6bcb78d3;
+}
+.content-1 ul h1 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 80px;
+    color: #ffffff;
+}
+.content-1 ul li {
+    color: #ffffff;
+}
+.text1 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 60px;
+    margin-bottom: 20px;
+}
+.text2 {
+    font-size: 20px;
+}
+.content-2 {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 10px;
+    align-items: center;
+    height: 600px;
+    background-color: #ffffffab;
+}
+.content-3 {
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    align-items: center;
+    height: 200px;
+    background-color: #4d97ffd0;
+}
+.content-3 ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    margin-right: 200px;
+}
+h2 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 40px;
+    color: #ffffff;
+    margin-bottom: 10px;
+}
+.info,
+.sosmed {
+    color: #ffffff;
+}
+.sosmed p{
+    padding-bottom: 10px;
+}
+
+/* FOOTER */
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 30px;
+    color: #ffffff;
+    background-color: #4D96FF;
+    font-family: 'Oswald', sans-serif;
+    font-size: 15px;
+}
+
+
+
 
 /* RESPONSIVE */
 
@@ -111,6 +193,15 @@ nav ul li a:hover {
     }
     .menu-2 {
         width: 20%;
+    }
+    .content-1 {
+        flex-direction: column;
+    }
+    .text1 {
+        font-size: 50px;
+    }
+    .info {
+        margin-right: 100px;
     }
 }
 
@@ -144,5 +235,27 @@ nav ul li a:hover {
     .menu-1.slide {
         opacity: 1;
         transform: translateX(0);
+    }
+    .content-1 {
+        height: 635px;
+        flex-direction: column;
+    }
+    .text1 {
+        font-size: 45px;
+    }
+    .text2 {
+        font-size: 16px;
+    }
+    .content-3 {
+        height: 400px;
+    }
+    .content-3 ul {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    footer {
+        font-size: 12px;
     }
 }
