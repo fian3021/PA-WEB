@@ -1,7 +1,7 @@
 <?php
     session_start();
 
-    require 'conf.php';
+    require 'config.php';
 
     if (isset($_POST['login'])){
         $user = $_POST ['user'];
@@ -21,7 +21,7 @@
 
                 echo "<script>
                         alert ('selamat datang $username');
-                        document.location.href='index.html';
+                        document.location.href='homeAdmin.php';
                     </script>";
             } else {
                 echo "<script>
@@ -30,6 +30,7 @@
             }
         }else echo "<script>
                 alert ('username tidak terdaftar, silahkan registrasi');
+                document.location.href='admin_register.php';
             </script>";
     }
 ?>
@@ -43,7 +44,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
-    <link rel="stylesheet" href="login_register.css">
+    <link rel="stylesheet" href="login_register2.css">
          
 </head>
 <body>
@@ -51,7 +52,7 @@
     <div class="container">
         <div class="formslogin">
             <div class="form login">
-                <span class="title">Login</span>
+                <span class="title">Admin Login</span>
 
                 <form action="" method="post">
                     <div class="input-field">

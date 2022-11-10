@@ -1,3 +1,14 @@
+<?php
+    session_start();
+    if(!isset($_SESSION['login'])){
+        echo "
+        <script>
+            alert('Akses ditolak, silahkan login dulu');
+            document.location.href = 'user_login.php';
+        </script>";
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>

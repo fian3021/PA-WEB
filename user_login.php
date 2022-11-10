@@ -1,7 +1,7 @@
 <?php
     session_start();
 
-    require 'conf.php';
+    require 'config.php';
 
     if (isset($_POST['login'])){
         $user = $_POST ['user'];
@@ -21,7 +21,7 @@
 
                 echo "<script>
                         alert ('selamat datang $username');
-                        document.location.href='index.html';
+                        document.location.href='homeUser.php';
                     </script>";
             } else {
                 echo "<script>
@@ -30,6 +30,7 @@
             }
         }else echo "<script>
                 alert ('username tidak terdaftar, silahkan registrasi');
+                document.location.href='user_register.php';
             </script>";
     }
 ?>
@@ -51,7 +52,7 @@
     <div class="container">
         <div class="formslogin">
             <div class="form login">
-                <span class="title">Login</span>
+                <span class="title">User Login</span>
 
                 <form action="" method="post">
                     <div class="input-field">

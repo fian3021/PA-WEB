@@ -1,5 +1,5 @@
 <?php 
-    require 'conf.php';
+    require 'config.php';
 
     if((isset($_POST['regis']))){
         $email = $_POST['email'];
@@ -51,15 +51,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
-    <link rel="stylesheet" href="login_register.css">
-         
+    <link rel="stylesheet" href="login_register2.css">
+    <title>Register Admin M-Posyandu</title>
 </head>
 <body>
     
     <div class="container">
         <div class="forms">
             <div class="form login">
-                <span class="title">Registration</span>
+                <span class="title">Admin Register</span>
 
                 <form action="" method="post">
                     <div class="input-field">
@@ -88,7 +88,7 @@
                     </div>
 
                     <div class="input-field button">
-                        <input type="submit" name = "regis" value="Signup">
+                        <input type="submit" name = "regis" value="Register">
                     </div>
                 </form>
 

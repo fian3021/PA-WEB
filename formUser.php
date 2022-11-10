@@ -1,3 +1,46 @@
+<?php
+    require 'config.php';
+
+    date_default_timezone_set("Asia/Singapore");
+    if(isset($_POST['submit'])){
+        $nama_anak = $_POST['nama-anak'];
+        $gender = $_POST['jenis_kelamin'];
+        $tgl_lahir = $_POST['tanggal-lahir']
+        $tinggi = $_POST['tinggi-badan'];
+        $berat = $_POST['berat-badan'];
+        $nama_ibu = $_POST['nama-ibu'];
+        $nama_ayah = $_POST['nama-ayah'];
+        $gambar = $_FILES['foto_anak']['name'];
+        $x = explode('.', $gambar);
+        $ekstensi = strtolower(end($x));
+        $foto_anak = "$nama.$ekstensi";
+        
+        $tmp = $_FILES['foto_anak']['tmp_name'];
+
+        if(move_uploaded_file($tmp, "Foto_Anak/".$foto_anak)){
+            $query = "INSERT INTO data_anak (nama_anak, jenis_kelamin, tanggal_lahir, tinggi, berat, nama_ibu, nama_ayah, foto_anak) 
+                        VALUES ('$nama_anak', '$gender','$tgl_lahir','$tinggi', '$berat', '$nama_ibu', '$nama_ayah', '$foto_anak')";
+            $result = $db->query($query); 
+            
+
+            if($result){
+                echo "
+                    <script>
+                        alert('Pengisian Data Berhasil');
+                        document.location.href = 'homeUser.php';
+                    </script>           
+                ";
+            }else{
+                echo "
+                    <script>
+                        alert('Pengisian Data Gagal');
+                    </script>           
+                ";
+            }
+        }
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -113,7 +156,7 @@
                         </td>
                         <td>
                             <br>
-                            <input type="file" name="foto-anak">
+                            <input type="file" name="foto_anak">
                             <span class="button">Pilih File</span>
                             <br><br>
                         </td>

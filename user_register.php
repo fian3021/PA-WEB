@@ -1,5 +1,5 @@
 <?php 
-    require 'conf.php';
+    require 'config.php';
 
     if((isset($_POST['regis']))){
         $email = $_POST['email'];
@@ -28,6 +28,7 @@
                 if($result){
                     echo "<script>
                             alert('Registrasi Berhasil')
+                            document.location.href='user_login.php';
                         </script>";
                 }else {
                     echo "<script>
@@ -59,7 +60,7 @@
     <div class="container">
         <div class="forms">
             <div class="form login">
-                <span class="title">Registration</span>
+                <span class="title">User Register</span>
 
                 <form action="" method="post">
                     <div class="input-field">

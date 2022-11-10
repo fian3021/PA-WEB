@@ -28,11 +28,11 @@
             <ul>
                 <li align="center">
                     <a href="#"><img src="https://cdn-user-icons.flaticon.com/78237/78237210/1668041718347.svg?token=exp=1668042620~hmac=d72716b56b2651b3f23a5ece33d3fe43" width="250px"></a>
-                    <a href="userlogin.html">USER</a>
+                    <a href="user_login.php">USER</a>
                 </li>
                 <li align="center">
                     <a href="#"><img src="https://cdn-user-icons.flaticon.com/78237/78237210/1668047121812.svg?token=exp=1668048037~hmac=974adfb7ed6395227d67f3a8fa751484" width="250px"></a>
-                    <a href="adminlogin.html">ADMIN</a>
+                    <a href="admin_login.php">ADMIN</a>
                 </li>
             </ul>
         </div>
