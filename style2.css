@@ -1,0 +1,301 @@
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+}
+
+body {
+    font-family: 'Rubik', sans-serif;
+    overflow-x: hidden;
+    background-image: url(https://pantirapih.or.id/rspr/wp-content/uploads/2022/04/imunisasi-anak-2.jpg);
+    background-size: 100% 100%;
+    background-attachment:fixed;
+    background-repeat: repeat-y;
+    transition: .2s ease;
+}
+
+/* NAVIGATION */
+nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #6BCB77;
+    width: 100%;
+    height: 60px;
+    margin: 0px;
+    position: -webkit-sticky;
+    position: sticky;
+    top: -1px;
+}
+.icon {
+    font-family: 'Oswald', sans-serif;
+    font-size: 25px;
+    color: #ffffff;
+    bottom: 2px;
+    position: relative;
+}
+.menu-1 {
+    display: flex;
+    justify-content: space-around;
+    width: 35%;
+}
+.menu-2 {
+    display: flex;
+    justify-content: space-around;
+    width: 15%;
+}
+nav ul li a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 17px;
+}
+nav ul li a:hover {
+    color: #dcf5dfcd;
+}
+/* Hamburger Menu */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    height: 20px;
+    justify-content: space-between;
+    position: relative;
+}
+.menu-toggle input {
+    position: absolute;
+    width: 55px;
+    height: 30px;
+    left: -12px;
+    top: -5px;
+    opacity: 0;
+    cursor: pointer;
+    z-index: 2;
+}
+.menu-toggle span {
+    display: block;
+    width: 30px;
+    height: 2px;
+    background-color: #ffffff;
+    transition: all 0.2s;
+}
+/* Hamburger Menu Animation*/
+.menu-toggle span:nth-child(2){
+    transform-origin: 0 0;
+}
+.menu-toggle span:nth-child(4){
+    transform-origin: 0 100%;
+}
+.menu-toggle input:checked ~ span:nth-child(2) {
+    transform: rotate(45deg) translate(-1px, -1px);
+}
+.menu-toggle input:checked ~ span:nth-child(3) {
+    opacity: 0;
+    transform: scale(0);
+}
+.menu-toggle input:checked ~ span:nth-child(4) {
+    transform: rotate(-45deg) translate(-1px, 0px);
+}
+
+/* MAIN CONTENT */
+
+/* Content-1 */
+.main-content {
+    width: 100%;
+}
+.content-1 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 10px;
+    align-items: center;
+    height: 600px;
+    background-color: #6bcb78d2;
+}
+.content-1 ul {
+    margin-bottom: 50px;
+}
+.content-1 ul h1 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 80px;
+    color: #ffffff;
+}
+.content-1 ul li {
+    color: #ffffff;
+}
+.text1 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 60px;
+    color: #000000;
+}
+.text2 {
+    display: flex;
+    flex-direction: column;
+    font-size: 20px;
+    color: #000000;
+}
+.content-2 {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 10px;
+    align-items: center;
+    height: 80vh;
+    background-color: #ffffffde;
+}
+.content-3 {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 10px;
+    align-items: center;
+    height: 500px;
+    background-color: #6bcb78d2;
+}
+.text3 {
+    font-size: 20px;
+    color: #000000;
+}
+.text3 p a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: #000000;
+}
+.text3 p a:hover {
+    color: #30af41ab;
+}
+.text3 p a img {
+    width: 80px;
+    margin-bottom: 15px;
+}
+
+
+/* FOOTER */
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+    color: #ffffff;
+    background-color: #6BCB77;
+    font-family: 'Oswald', sans-serif;
+    font-size: 15px;
+}
+
+
+
+
+/* RESPONSIVE */
+
+/* UKURAN TABLET */
+@media screen and (max-width: 800px) {
+    body {
+        background-size: 100% 60%;
+        background-attachment:fixed;
+        background-repeat: repeat-y;
+    }
+    .menu-1 {
+        width: 45%;        
+    }
+    .menu-2 {
+        width: 20%;
+    }
+    .content-1 {
+        flex-direction: column;
+    }
+    .content-1 ul h1 {
+        font-size: 55px;
+    }
+    .text1 {
+        font-size: 50px;
+    }
+
+    .info {
+        margin-right: 100px;
+    }
+}
+
+/* UKURAN MOBILE */
+@media screen and (max-width: 580px) {
+    body {
+        background-size: 100% 40%;
+        background-attachment:fixed;
+        background-repeat: repeat-y;
+    }
+    .menu-toggle {
+        display: flex;
+    }
+    .menu-1 {
+        position: absolute;
+        right: 0;
+        top: 0;
+        font-size: large;
+        padding-top: 70px;
+        width: 50%;
+        height: 100vh;
+        justify-content: start;
+        flex-direction: column;
+        align-items: center;
+        background-color: #6bcb78ea;
+        transform: translateX(100%);
+        transition: all 0.5s;
+        opacity: 0;
+    }
+    .menu-1 li {
+        padding-bottom: 30px;        
+    }
+    .menu-2 {
+        width: 35%;
+    }
+    .menu-1.slide {
+        opacity: 1;
+        transform: translateX(0);
+    }
+    .content-1 {
+        height: 635px;
+        flex-direction: column;
+    }
+    .content-1 ul h1 {
+        font-size: 50px;
+    }
+    .text1 {
+        font-size: 45px;
+    }
+    .text2 {
+        font-size: 16px;
+    }
+    .text3 {
+        font-size: 16px;
+    }
+    .contact {
+        height: 400px;
+    }
+    .contact ul {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .contact {
+        height: 300px;
+    }
+    .contact ul {
+        display: flex;
+        flex-direction: column;
+    }
+    .info {
+        margin-right: 0px;
+    }
+    .info p{
+        font-weight: 1;
+        margin-bottom: 20px;
+    }
+    h2 {
+        font-size: 30px;
+    }
+    
+    footer {
+        font-size: 12px;
+    }
+}

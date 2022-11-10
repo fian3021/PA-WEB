@@ -208,6 +208,77 @@ nav ul li a:hover {
 }
 
 
+/* FORMULIR USER */
+.form-user {
+    height: 800px;
+    padding: 10px;
+    background-color: #ffffffc1;
+}
+.form-user li {
+    padding-top: 20px;
+    font-size: 20px;
+}
+form table{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 65%;
+    border: 2px solid #4D96FF;
+    margin: 0px 20px;
+    padding: 5px 15px;
+    color: #162841;
+}
+form table tr {
+    height: 40px;
+}
+form table tr td:nth-child(1) {
+    width: 35%;
+}
+form table tr td:nth-child(2) {
+    width: 65%;
+}
+input[type="text"],
+input[type="date"],
+input[type="number"] {
+    width: 100%;
+    height: 30px;
+    border: none;
+    color: #162841;
+    background-color: #5cb0ff95;
+    box-shadow: 1.5px 1.5px 1.5px 0px rgb(53, 76, 101);
+}
+::placeholder { 
+    color: #162841;
+}
+input[type="file"] {
+	position: absolute;
+	opacity: 0;
+	cursor: pointer;
+}
+.button {
+    padding: 5px 20px;
+    background-color: #5cb0ff95;
+    border: 1px solid #4D96FF;
+    box-shadow: 1.5px 1.5px 1.5px 0px rgb(53, 76, 101);
+    cursor: pointer;
+}
+input[type="submit"] {
+    font-family: 'Oswald', sans-serif;
+    font-size: 20px;
+    padding: 5px 20px;
+    color: white;
+    background-color: #4D96FF;
+    border: 1px solid #4D96FF;
+    box-shadow: 1.5px 1.5px 1.5px 0px rgb(53, 76, 101);
+    cursor: pointer;
+}
+
+
+
+
+
+/* FOOTER */
 .contact {
     display: flex;
     justify-content: center;
@@ -241,8 +312,6 @@ h2 {
     color: #ffffff;
 }
 
-
-/* FOOTER */
 footer {
     display: flex;
     justify-content: center;
@@ -285,6 +354,11 @@ footer {
         margin-right: 150px;
     }
 
+    /* FORMULIR USER */
+    
+    form table{
+        width: 95%;
+    }
     .info {
         margin-right: 100px;
     }
