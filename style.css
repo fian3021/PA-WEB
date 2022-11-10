@@ -101,30 +101,48 @@ nav ul li a:hover {
 /* ROLE */
 .role {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
     padding: 10px;
     align-items: center;
     height: 665px;
-    background-color: #ffffffcc;
+    background-color: #ffffffdb;
+    font-family: 'Oswald', sans-serif;
 }
-.role ul {
+.role ul li {
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
-.role ul a {
+.role ul h1 {
+    font-size: 50px;
     font-family: 'Oswald', sans-serif;
-    font-size: 60px;
+    margin-bottom: 50px;
+    color: #6ea8ea;
+    /* border-radius: 100px;
+    background-color: #4D96FF; */
+}
+.role ul:nth-child(2) {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.role ul li a {
+    font-size: 35px;
     margin: 3px 50px;
     text-decoration: none;
-    color: #000000;
+    color: #ffffff;
 }
-.role ul a:nth-child(2){
+.role ul li a:nth-child(1){
+    padding: 3px;
+    border: 1px solid #4d97ff97;
+    border-radius: 10px;
+}
+.role ul li a:nth-child(2){
     background-color: #4D96FF;
     border-radius: 60px;
 }
-.role ul a:nth-child(2):hover{
+.role ul li a:nth-child(2):hover{
     background-color: #6BCB77;
 }
 
