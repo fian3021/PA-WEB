@@ -27,6 +27,13 @@ body{
 .container .forms{
     display: flex;
     align-items: center;
+    height: 600px;
+    width: 200%;
+    transition: height 0.2s ease;
+}
+.container .formslogin{
+    display: flex;
+    align-items: center;
     height: 440px;
     width: 200%;
     transition: height 0.2s ease;
@@ -37,12 +44,6 @@ body{
     background-color: #fff;
     transition: margin-left 0.18s ease;
 }
-.container.active .login{
-    margin-left: -50%;
-    opacity: 0;
-    transition: margin-left 0.18s ease, opacity 0.15s ease;
-}
-
 .container .form .title{
     position: relative;
     font-size: 27px;
@@ -55,7 +56,7 @@ body{
     bottom: 0;
     height: 3px;
     width: 30px;
-    background-color: #6af440;
+    background-color: #4070f4;
     border-radius: 25px;
 }
 .form .input-field{
