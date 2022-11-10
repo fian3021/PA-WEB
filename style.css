@@ -97,6 +97,37 @@ nav ul li a:hover {
 }
 
 /* MAIN CONTENT */
+
+/* ROLE */
+.role {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 10px;
+    align-items: center;
+    height: 665px;
+    background-color: #ffffffcc;
+}
+.role ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.role ul a {
+    font-family: 'Oswald', sans-serif;
+    font-size: 60px;
+    margin: 3px 50px;
+    text-decoration: none;
+    color: #000000;
+}
+.role ul a:nth-child(2){
+    background-color: #4D96FF;
+    border-radius: 60px;
+}
+.role ul a:nth-child(2):hover{
+    background-color: #6BCB77;
+}
+
 /* Content-1 */
 .main-content {
     width: 100%;
