@@ -21,7 +21,7 @@
                 
                 $password = password_hash($password, PASSWORD_DEFAULT);
 
-                $query = "INSERT INTO akun_user (email, username, psw)
+                $query = "INSERT INTO akun_admin (email, username, psw)
                     VALUES ('$email', '$username', '$password')";
                 $result = $db->query($query);
 

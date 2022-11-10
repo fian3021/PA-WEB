@@ -5,7 +5,7 @@
     if(isset($_POST['submit'])){
         $nama_anak = $_POST['nama-anak'];
         $gender = $_POST['jenis_kelamin'];
-        $tgl_lahir = $_POST['tanggal-lahir']
+        $tgl_lahir = $_POST['tanggal-lahir'];
         $tinggi = $_POST['tinggi-badan'];
         $berat = $_POST['berat-badan'];
         $nama_ibu = $_POST['nama-ibu'];
@@ -13,7 +13,7 @@
         $gambar = $_FILES['foto_anak']['name'];
         $x = explode('.', $gambar);
         $ekstensi = strtolower(end($x));
-        $foto_anak = "$nama.$ekstensi";
+        $foto_anak = "$nama_anak.$ekstensi";
         
         $tmp = $_FILES['foto_anak']['tmp_name'];
 
@@ -67,7 +67,7 @@
         </ul>
         <ul class="menu-2">
             <li><a href="/">Profil</a></li>
-            <li><a href="/">Logout</a></li>
+            <li><a href="logout.php">Logout</a></li>
         </ul>
         <div class="menu-toggle">
             <input type="checkbox" />
