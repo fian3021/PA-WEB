@@ -137,6 +137,7 @@ nav ul li a:hover {
     padding: 3px;
     border: 1px solid #4d97ff97;
     border-radius: 10px;
+    width: 250px;
 }
 .role ul li a:nth-child(2){
     background-color: #4D96FF;
@@ -389,6 +390,25 @@ footer {
         background-attachment:fixed;
         background-repeat: repeat-y;
     }
+
+    /* ROLE */
+    .role ul h1 {
+        font-size: 50px;
+        margin-bottom: 50px;
+    }
+    .role ul:nth-child(2) {
+        flex-direction: column;
+    }
+    .role ul li a {
+        font-size: 25px;
+    }
+    .role ul li a:nth-child(1){
+        width: 150px;
+    }
+    .role ul li a:nth-child(2){
+        border-radius: 40px;
+    }
+
     .menu-toggle {
         display: flex;
     }
