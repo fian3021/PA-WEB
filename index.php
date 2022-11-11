@@ -27,11 +27,11 @@
             </ul>
             <ul>
                 <li align="center">
-                    <a href="#"><img src="https://i.pinimg.com/564x/47/3a/cd/473acddf924f6052a7674834bd20904b.jpg"></a>
+                    <a href="#"><img src="https://i.pinimg.com/564x/47/3a/cd/473acddf924f6052a7674834bd20904b.jpg" width="250px"></a>
                     <a href="user_login.php">USER</a>
                 </li>
                 <li align="center">
-                    <a href="#"><img src="https://i.pinimg.com/564x/06/c1/30/06c130aaae7b0d6d81ec3b438756ab21.jpg"></a>
+                    <a href="#"><img src="https://i.pinimg.com/564x/06/c1/30/06c130aaae7b0d6d81ec3b438756ab21.jpg" width="250px"></a>
                     <a href="admin_login.php">ADMIN</a>
                 </li>
             </ul>

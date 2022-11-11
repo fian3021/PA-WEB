@@ -105,7 +105,7 @@ nav ul li a:hover {
     justify-content: center;
     padding: 10px;
     align-items: center;
-    height: 665px;
+    height: 670px;
     background-color: #ffffffdb;
     font-family: 'Oswald', sans-serif;
 }
@@ -119,8 +119,6 @@ nav ul li a:hover {
     font-family: 'Oswald', sans-serif;
     margin-bottom: 80px;
     color: #6ea8ea;
-    /* border-radius: 100px;
-    background-color: #4D96FF; */
 }
 .role ul:nth-child(2) {
     display: flex;
@@ -137,7 +135,7 @@ nav ul li a:hover {
     padding: 3px;
     border: 1px solid #4d97ff97;
     border-radius: 10px;
-    width: 250px;
+    
 }
 .role ul li a:nth-child(2){
     background-color: #4D96FF;
@@ -292,9 +290,15 @@ input[type="submit"] {
     box-shadow: 1.5px 1.5px 1.5px 0px rgb(53, 76, 101);
     cursor: pointer;
 }
-
-
-
+.input label {
+	color: #333;
+	white-space: nowrap;
+	opacity: .3;
+}
+ 
+.input-chosen label {
+ 	opacity: 1;
+}
 
 
 /* FOOTER */
@@ -304,7 +308,8 @@ input[type="submit"] {
     padding: 10px;
     align-items: center;
     height: 200px;
-    background-color: #4d97ffe9;
+    color: #ffffff;
+    background-color: #4d97fff1;
 }
 .contact ul {
     display: flex;
@@ -315,21 +320,17 @@ input[type="submit"] {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
-    margin-right: 200px;
-}
-.info p{
-    font-weight: 1;
 }
 h2 {
     font-family: 'Oswald', sans-serif;
     font-size: 40px;
-    color: #ffffff;
     margin-bottom: 10px;
 }
 .info,
 .sosmed {
-    color: #ffffff;
+    margin-right: 100px;
 }
+
 
 footer {
     display: flex;
@@ -339,7 +340,7 @@ footer {
     color: #ffffff;
     background-color: #4D96FF;
     font-family: 'Oswald', sans-serif;
-    font-size: 15px;
+    font-size: 20px;
 }
 
 
@@ -354,6 +355,21 @@ footer {
         background-attachment:fixed;
         background-repeat: repeat-y;
     }
+
+    /* ROLE */
+    .role ul li a {
+        font-size: 30px;
+    }
+    .role ul li a:nth-child(1){
+        width: 200px;
+    }
+    .role ul li a img {
+        width: 200px;
+    }
+    .role ul li a:nth-child(2){
+        border-radius: 50px;
+    }
+
     .menu-1 {
         width: 45%;        
     }
@@ -381,6 +397,15 @@ footer {
     .info {
         margin-right: 100px;
     }
+    /* FOOTER */
+    h2 {
+        font-size: 35px;
+    }
+    .info,
+    .sosmed {
+        margin-right: 50px;
+    }
+
 }
 
 /* UKURAN MOBILE */
@@ -403,6 +428,9 @@ footer {
         font-size: 25px;
     }
     .role ul li a:nth-child(1){
+        width: 150px;
+    }
+    .role ul li a img {
         width: 150px;
     }
     .role ul li a:nth-child(2){
@@ -467,18 +495,19 @@ footer {
     }
 
     .contact {
-        height: 300px;
+        height: 400px;
     }
     .contact ul {
         display: flex;
         flex-direction: column;
     }
-    .info {
+    .info,
+    .sosmed {
         margin-right: 0px;
+        margin-bottom: 30px;
     }
     .info p{
         font-weight: 1;
-        margin-bottom: 20px;
     }
     h2 {
         font-size: 30px;

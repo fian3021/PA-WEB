@@ -30,11 +30,11 @@
         <ul class="menu-1">
             <li><a href="homeUser.php">Home</a></li>
             <li><a href="about.html">About</a></li>
-            <li><a href="features.html">Features</a></li>
-            <li><a href="/">Contact</a></li>
+            <li><a href="#features">Features</a></li>
+            <li><a href="#contact">Contact</a></li>
         </ul>
         <ul class="menu-2">
-            <li><a href="/">Profil</a></li>
+            <li><a href="profil.php">Profil</a></li>
             <li><a href="logout.php">Logout</a></li>
         </ul>
         <div class="menu-toggle">
@@ -70,7 +70,7 @@
             </ul>
         </div>
         <!-- CONTENT 3 -->
-        <div class="content-3">
+        <div id="features" class="content-3">
             <ul align="center">
                 <li class="text1">Features<br><br></li>
                 <li class="text3">
@@ -89,9 +89,9 @@
     
     <!-- FOOTER -->
     <!-- CONTACT -->
-    <div class="contact">
+    <div id="contact" class="contact">
         <ul align="center">
-            <li class="info" align="left">
+            <li class="info">
                 <h2>M-Posyandu</h2>
                 <p>Pendataan imunisasi <br>anak di Posyandu <br>dengan sistem online</p>
             </li>
@@ -106,6 +106,14 @@
                 <a href="" title="WhatsApp">
                     <img src="https://cdn-icons-png.flaticon.com/512/5968/5968841.png" width="40px">
                 </a>
+            </li>
+            <li>
+                <h2>Contact</h2>
+                <p> 
+                    Ilham (+62 857-5165-8952) <br>
+                    Fiana (+62 821-5065-8726) <br>
+                    Fira (+62 831-5351-7731) <br>
+                </p>
             </li>
         </ul>
     </div>
