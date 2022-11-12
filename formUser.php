@@ -11,6 +11,8 @@
         $nama_ibu = $_POST['nama-ibu'];
         $nama_ayah = $_POST['nama-ayah'];
         $gambar = $_FILES['foto_anak']['name'];
+        $waktu = implode(" ", $_POST['isi']);
+        
         $x = explode('.', $gambar);
         $ekstensi = strtolower(end($x));
         $foto_anak = "$nama_anak.$ekstensi";
@@ -18,8 +20,8 @@
         $tmp = $_FILES['foto_anak']['tmp_name'];
 
         if(move_uploaded_file($tmp, "Foto_Anak/".$foto_anak)){
-            $query = "INSERT INTO data_anak (nama_anak, jenis_kelamin, tanggal_lahir, tinggi, berat, nama_ibu, nama_ayah, foto_anak) 
-                        VALUES ('$nama_anak', '$gender','$tgl_lahir','$tinggi', '$berat', '$nama_ibu', '$nama_ayah', '$foto_anak')";
+            $query = "INSERT INTO data_anak (nama_anak, jenis_kelamin, tanggal_lahir, tinggi, berat, nama_ibu, nama_ayah, foto_anak, tanggal_isi) 
+                        VALUES ('$nama_anak', '$gender','$tgl_lahir','$tinggi', '$berat', '$nama_ibu', '$nama_ayah', '$foto_anak', '$waktu')";
             $result = $db->query($query); 
             
 
@@ -157,6 +159,8 @@
 
                     <tr>
                         <td colspan="2" align="center">
+                            <input type="hidden" name="isi[]" value=<?=date("d/m/Y")?>>
+                            <input type="hidden" name="isi[]" value=<?=date("H:i")?>>
                             <input type="submit" name="submit" class="submit" value="Simpan" />
                         </td>
                     </tr>

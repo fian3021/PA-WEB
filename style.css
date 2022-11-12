@@ -145,7 +145,7 @@ nav ul li a:hover {
     background-color: #6BCB77;
 }
 
-/* Content-1 */
+/* MAIN CONTENT */
 .main-content {
     width: 100%;
 }
@@ -222,6 +222,34 @@ nav ul li a:hover {
 .text3 p a img {
     width: 80px;
     margin-bottom: 15px;
+}
+
+/* PROFIL */
+.profil {
+    padding: 10px;
+    height: 600px;
+    background-color: #ffffffda;
+}
+.profil table{
+    width: 50%;
+    padding: 20px;
+    margin: 25px 50px;
+    justify-content: center;
+    align-content: center;
+    font-size: 20px;
+    border: 1px solid #4D96FF;
+    border-radius: 10px;
+    box-shadow: 1.5px 1.5px 1.5px 0px rgb(53, 76, 101);
+}
+.profil table tr td{
+    height: 30px;
+}
+.profil table tr td img{
+    border-radius: 10px;
+    box-shadow: 1.5px 1.5px 1.5px 0px rgb(53, 76, 101);
+}
+.profil table tr td:nth-child(1) {
+    width: 35%;
 }
 
 

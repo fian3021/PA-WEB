@@ -1,13 +1,8 @@
-<!-- <?php
-    session_start();
-    if(!isset($_SESSION['login'])){
-        echo "
-        <script>
-            alert('Akses ditolak, silahkan login dulu');
-            document.location.href = 'user_login.php';
-        </script>";
-    }
-?> -->
+<?php
+    require 'config.php';
+
+    $result = mysqli_query($db, "SELECT * FROM data_anak");
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -47,43 +42,50 @@
 
     <!-- MAIN-CONTENT -->
     <div class="main-content">
-        <!-- CONTENT 1 -->
-        <div class="content-1">
-            <ul align="center">
-                <h1>M-Posyandu</h1>
-                <li class="text2"><br>Pendataan imunisasi anak di Posyandu dengan sistem online</li>
-            </ul>
-            <ul>
-                <img src="https://cdn-icons-png.flaticon.com/512/6205/6205025.png" width="250px">
-            </ul>
-        </div>
-        <!-- CONTENT 2 -->
-        <div class="content-2">
-            <ul align="center">
-                <li class="text1">About M-Posyandu<br></li>
-                <li class="text2">
-                    <br>Dengan adanya website M-Posyandu ini diharapkan <br>
-                    dapat membantu para orang tua dalam pemberian atau penentuan <br>
-                    imunisasi si anak, dengan begitu anak bisa mendapatkan <br> 
-                    imunisasi yang tepat sesuai dengan usianya.
-                </li>
-            </ul>
-        </div>
-        <!-- CONTENT 3 -->
-        <div id="features" class="content-3">
-            <ul align="center">
-                <li class="text1">Features<br><br></li>
-                <li class="text3">
-                    <p>
-                        <a href="formUser.php"><img src="https://cdn-icons-png.flaticon.com/512/684/684831.png"></a>
-                        <a href="formUser.php">Pendataan Profile <br> Anak</a>
-                    </p>
-                    <p>
-                        <a href=""><img src="https://cdn-icons-png.flaticon.com/512/2822/2822676.png"></a>
-                        <a href="">Lihat Data</a>
-                    </p>
-                </li>
-            </ul>
+        <!-- PROFIL -->
+        <div class="profil">
+            <table>
+                <?php
+                    $row = mysqli_fetch_array($result);  
+                ?>
+                <tr colspan="2">
+                    <td align="center"><img src="Foto_Anak/<?=$row['foto_anak']?>" alt="" width="250px"></td>
+                </tr>
+                <tr>
+                    <td>Nama Anak</td>
+                    <td>: <?=$row['nama_anak']?></td>
+                </tr>
+                <tr>
+                    <td>Tanggal Lahir</td>
+                    <td>: <?=$row['tanggal_lahir']?></td>
+                </tr>
+                <tr>
+                    <td>Jenis Kelamin</td>
+                    <td>: <?=$row['jenis_kelamin']?></td>
+                </tr>
+                <tr><td></td></tr>
+                <tr>
+                    <td>Nama Ibu</td>
+                    <td>: <?=$row['nama_ibu']?></td>
+                </tr>
+                <tr>
+                    <td>Nama Ayah</td>
+                    <td>: <?=$row['nama_ayah']?></td>
+                </tr>
+                <!-- <tr>
+                    <td>Tinggi Badan</td>
+                    <td>: <?=$row['tinggi']?></td>
+                </tr>
+                <tr>
+                    <td>Berat Badan</td>
+                    <td>: <?=$row['berat']?></td>
+                </tr> -->
+                <tr><td></td></tr>
+                <tr colspan="2">
+                    <td><?=$row['tanggal_isi']?></td>
+                </tr>
+                
+            </table>
         </div>
     </div>
     
