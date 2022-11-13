@@ -1,46 +1,58 @@
 <?php
     require 'config.php';
 
-    date_default_timezone_set("Asia/Singapore");
-    if(isset($_POST['submit'])){
-        $nama_anak = $_POST['nama-anak'];
-        $gender = $_POST['jenis_kelamin'];
-        $tgl_lahir = $_POST['tanggal-lahir'];
-        $tinggi = $_POST['tinggi-badan'];
-        $berat = $_POST['berat-badan'];
-        $nama_ibu = $_POST['nama-ibu'];
-        $nama_ayah = $_POST['nama-ayah'];
-        $gambar = $_FILES['foto_anak']['name'];
-        $waktu = implode(" ", $_POST['isi']);
-        
-        $x = explode('.', $gambar);
-        $ekstensi = strtolower(end($x));
-        $foto_anak = "$nama_anak.$ekstensi";
-        
-        $tmp = $_FILES['foto_anak']['tmp_name'];
+    session_start();
+    if(!isset($_SESSION['login'])){
+        echo "
+        <script>
+            alert('Akses ditolak, silahkan login dulu');
+            document.location.href = 'user_login.php';
+        </script>";
+    }else{
+        $ID_user = $_SESSION['ID_user'];
 
-        if(move_uploaded_file($tmp, "Foto_Anak/".$foto_anak)){
-            $query = "INSERT INTO data_anak (nama_anak, jenis_kelamin, tanggal_lahir, tinggi, berat, nama_ibu, nama_ayah, foto_anak, tanggal_isi) 
-                        VALUES ('$nama_anak', '$gender','$tgl_lahir','$tinggi', '$berat', '$nama_ibu', '$nama_ayah', '$foto_anak', '$waktu')";
-            $result = $db->query($query); 
+        date_default_timezone_set("Asia/Singapore");
+        if(isset($_POST['submit'])){
+            $nama_anak = $_POST['nama-anak'];
+            $gender = $_POST['jenis_kelamin'];
+            $tgl_lahir = $_POST['tanggal-lahir'];
+            $tinggi = $_POST['tinggi-badan'];
+            $berat = $_POST['berat-badan'];
+            $nama_ibu = $_POST['nama-ibu'];
+            $nama_ayah = $_POST['nama-ayah'];
+            $gambar = $_FILES['foto_anak']['name'];
+            $waktu = implode(" ", $_POST['isi']);
             
+            $x = explode('.', $gambar);
+            $ekstensi = strtolower(end($x));
+            $foto_anak = "$nama_anak.$ekstensi";
+            
+            $tmp = $_FILES['foto_anak']['tmp_name'];
 
-            if($result){
-                echo "
-                    <script>
-                        alert('Pengisian Data Berhasil');
-                        document.location.href = 'homeUser.php';
-                    </script>           
-                ";
-            }else{
-                echo "
-                    <script>
-                        alert('Pengisian Data Gagal');
-                    </script>           
-                ";
+            if(move_uploaded_file($tmp, "Foto_Anak/".$foto_anak)){
+                $query = "INSERT INTO data_anak (ID_user, nama_anak, jenis_kelamin, tanggal_lahir, tinggi, berat, nama_ibu, nama_ayah, foto_anak, tanggal_isi) 
+                            VALUES ('$ID_user', '$nama_anak', '$gender','$tgl_lahir','$tinggi', '$berat', '$nama_ibu', '$nama_ayah', '$foto_anak', '$waktu')";
+                $result = $db->query($query); 
+                
+                if($result){
+                    echo "
+                        <script>
+                            alert('Pengisian Data Berhasil');
+                            document.location.href = 'homeUser.php';
+                        </script>           
+                    ";
+                }else{
+                    echo "
+                        <script>
+                            alert('Pengisian Data Gagal');
+                        </script>           
+                    ";
+                }
             }
         }
     }
+
+
 ?>
 
 <!DOCTYPE html>
@@ -64,7 +76,7 @@
         <ul class="menu-1">
             <li><a href="homeUser.php">Home</a></li>
             <li><a href="about.html">About</a></li>
-            <li><a href="#features">Features</a></li>
+            <li><a href="features.php">Features</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
         <ul class="menu-2">
@@ -82,8 +94,8 @@
     <!-- MAIN-CONTENT -->
     <div class="main-content">
         <!-- FORM PENGISIAN DATA ANAK -->
-        <ul class="form-user">
-            <li align="center">Silahkan isi data anak pada formulir di bawah ini:</li>
+        <div class="form-user">
+            <h2 align="center">Form Pendaftaran Imunisasi Anak:</h2>
             <form action="" method="post" enctype="multipart/form-data">
                 <table>
                     <tr>
@@ -151,22 +163,22 @@
                         <td>
                             <br>
                             <input type="file" name="foto_anak">
-                            <span class="button">Pilih File</span>
-                            <span class="label">Tidak ada file yang dipilih</span>
+                            <!-- <span class="button">Pilih File</span> -->
                             <br><br>
                         </td>
                     </tr>
 
                     <tr>
                         <td colspan="2" align="center">
+                            <input type="hidden" name="isi[]" value=<?=date("D")?>>
                             <input type="hidden" name="isi[]" value=<?=date("d/m/Y")?>>
-                            <input type="hidden" name="isi[]" value=<?=date("H:i")?>>
+                            <input type="hidden" name="isi[]" value=<?=date("H:i")?>><br><br>
                             <input type="submit" name="submit" class="submit" value="Simpan" />
                         </td>
                     </tr>
                 </table>
             </form>
-        </ul>
+        </div>
     </div>
     
     <!-- FOOTER -->
@@ -185,8 +197,8 @@
                 <a href="" title="Instagram">
                     <img src="https://cdn-icons-png.flaticon.com/512/3955/3955024.png" width="40px">
                 </a>
-                <a href="" title="WhatsApp">
-                    <img src="https://cdn-icons-png.flaticon.com/512/5968/5968841.png" width="40px">
+                <a href="" title="Twiter">
+                    <img src="https://cdn-icons-png.flaticon.com/512/3670/3670151.png" width="40px">
                 </a>
             </li>
             <li>

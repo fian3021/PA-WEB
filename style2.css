@@ -108,16 +108,17 @@ nav ul li a:hover {
     justify-content: center;
     padding: 10px;
     align-items: center;
-    height: 600px;
+    height: auto;
     background-color: #6bcb78d2;
 }
 .content-1 ul {
     margin-bottom: 50px;
 }
-.content-1 ul h1 {
+h1 {
     font-family: 'Oswald', sans-serif;
-    font-size: 80px;
+    font-size: 65px;
     color: #ffffff;
+    margin-top: 250px;
 }
 .content-1 ul li {
     color: #ffffff;
@@ -139,7 +140,7 @@ nav ul li a:hover {
     justify-content: center;
     padding: 10px;
     align-items: center;
-    height: 80vh;
+    height: 700px;
     background-color: #ffffffde;
 }
 .content-3 {
@@ -148,10 +149,12 @@ nav ul li a:hover {
     justify-content: center;
     padding: 10px;
     align-items: center;
-    height: 500px;
+    height: auto;
     background-color: #6bcb78d2;
 }
 .text3 {
+    display: flex;
+    flex-direction: row;
     font-size: 20px;
     color: #000000;
 }
@@ -161,6 +164,7 @@ nav ul li a:hover {
     align-items: center;
     text-decoration: none;
     color: #000000;
+    padding: 20px 60px;
 }
 .text3 p a:hover {
     color: #30af41ab;
@@ -168,6 +172,26 @@ nav ul li a:hover {
 .text3 p a img {
     width: 80px;
     margin-bottom: 15px;
+}
+
+/* HASIL FEEDBACK */
+.feedback {
+    padding: 10px;
+    height: 100vh;
+    background-color: #ffffffde;
+}
+.feedback h2 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 40px;
+    margin-bottom: 15px;
+    margin-top: 15px;
+}
+.feedback table {
+    width: 100%;
+    padding: 15px;
+    border-radius: 10px;
+    background-color: #6bcb787c;
+    box-shadow: 1.5px 1.5px 1.5px 0px rgb(53, 76, 101);
 }
 
 
@@ -267,6 +291,9 @@ footer {
     }
     .text3 {
         font-size: 16px;
+    }
+    .text3 p a {
+        flex-direction: column-reverse;
     }
     .contact {
         height: 400px;

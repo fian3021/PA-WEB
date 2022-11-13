@@ -1,11 +1,19 @@
 <?php 
-    require 'config.php';
+    include "config.php";
 
+    date_default_timezone_set("Asia/Singapore");
     if((isset($_POST['regis']))){
+        $kode = $_POST['kode'];
         $email = $_POST['email'];
         $username = $_POST ['username'];
         $password = $_POST['password'];
         $konfirmasi = $_POST['konfirmasi'];
+
+        $tgl_regis = implode(" ", $_POST['regA']);
+
+        // cek kode admin
+        $kd = "SELECT * FROM data_admin WHERE kode = '$kode'";
+        $code = $db->query($kd);
 
         //cek username udah digunakan atau belum
         $sql = "SELECT * FROM akun_admin WHERE username = '$username'";
@@ -18,20 +26,25 @@
         }else{
             //cek konfirmasi password 
             if($password == $konfirmasi){
-                
-                $password = password_hash($password, PASSWORD_DEFAULT);
+                if(mysqli_num_rows($code) > 0 ){
+                    $password = password_hash($password, PASSWORD_DEFAULT);
 
-                $query = "INSERT INTO akun_admin (email, username, psw)
-                    VALUES ('$email', '$username', '$password')";
-                $result = $db->query($query);
+                    $query = "INSERT INTO akun_admin (kode, email, username, psw, tanggal_regis)
+                        VALUES ('$kode', '$email', '$username', '$password', '$tgl_regis')";
+                    $result = $db->query($query);
 
-                if($result){
+                    if($result){
+                        echo "<script>
+                                alert('Registrasi Berhasil')
+                            </script>";
+                    }else {
+                        echo "<script>
+                                alert('Registrasi Gagal coba lagi')
+                            </script>";
+                    }
+                }else{
                     echo "<script>
-                            alert('Registrasi Berhasil')
-                        </script>";
-                }else {
-                    echo "<script>
-                            alert('Registrasi Gagal coba lagi')
+                            alert ('kode admin tidak terdaftar, tidak bisa registrasi');
                         </script>";
                 }
             }else {
@@ -63,19 +76,23 @@
 
                 <form action="" method="post">
                     <div class="input-field">
-                        <input type="text" name="username"placeholder="Enter your name" required>
+                        <input type="text" name="kode"placeholder="Masukkan Kode Admin" required>
                         <i class="uil uil-user"></i>
                     </div>
                     <div class="input-field">
-                        <input type="text" name="email" placeholder="Enter your email" required>
+                        <input type="text" name="username"placeholder="Masukkan Username" required>
+                        <i class="uil uil-user"></i>
+                    </div>
+                    <div class="input-field">
+                        <input type="text" name="email" placeholder="Masukkan Email" required>
                         <i class="uil uil-envelope icon"></i>
                     </div>
                     <div class="input-field">
-                        <input type="password" name="password" class="password" placeholder="Create a password" required>
+                        <input type="password" name="password" class="password" placeholder="Masukkan Password" required>
                         <i class="uil uil-lock icon"></i>
                     </div>
                     <div class="input-field">
-                        <input type="password" name="konfirmasi" class="password" placeholder="Confirm a password" required>
+                        <input type="password" name="konfirmasi" class="password" placeholder="Konfirmasi Password" required>
                         <i class="uil uil-lock icon"></i>
                         <i class="uil uil-eye-slash showHidePw"></i>
                     </div>
@@ -88,6 +105,9 @@
                     </div>
 
                     <div class="input-field button">
+                        <input type="hidden" name="regA[]" value=<?=date("D")?>>
+                        <input type="hidden" name="regA[]" value=<?=date("d/m/Y")?>>
+                        <input type="hidden" name="regA[]" value=<?=date("H:i")?>>
                         <input type="submit" name = "regis" value="Register">
                     </div>
                 </form>

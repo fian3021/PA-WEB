@@ -1,7 +1,21 @@
 <?php
     require 'config.php';
 
-    $result = mysqli_query($db, "SELECT * FROM data_anak");
+    session_start();
+    if(!isset($_SESSION['login'])){
+        echo "
+        <script>
+            alert('Akses ditolak, silahkan login dulu');
+            document.location.href = 'user_login.php';
+        </script>";
+    }else{
+        $ID_user = $_SESSION['ID_user'];
+        $user = $_SESSION['username'];  
+        $tgl_regis = $_SESSION['tanggal_regis'];
+        
+        $result = mysqli_query($db, "SELECT * FROM data_anak WHERE ID_user = '$ID_user'");
+        $tgl = mysqli_query($db, "SELECT * FROM akun_user WHERE ID_user = '$ID_user'");
+    }
 ?>
 
 <!DOCTYPE html>
@@ -25,8 +39,8 @@
         <ul class="menu-1">
             <li><a href="homeUser.php">Home</a></li>
             <li><a href="about.html">About</a></li>
-            <li><a href="#features">Features</a></li>
-            <li><a href="#bottom">Contact</a></li>
+            <li><a href="features.php">Features</a></li>
+            <li><a href="#contact">Contact</a></li>
         </ul>
         <ul class="menu-2">
             <li><a href="profil.php">Profil</a></li>
@@ -44,13 +58,24 @@
     <div class="main-content">
         <!-- PROFIL -->
         <div class="profil">
+            <h2>Profil</h2>
+            <?php
+                $row = mysqli_fetch_array($result);
+                $waktu = mysqli_fetch_array($tgl);
+            ?>
             <table>
-                <?php
-                    $row = mysqli_fetch_array($result);  
-                ?>
                 <tr colspan="2">
                     <td align="center"><img src="Foto_Anak/<?=$row['foto_anak']?>" alt="" width="250px"></td>
                 </tr>
+                <tr>
+                    <td>Username</td>
+                    <td>: <?=$user;?></td>
+                </tr>
+                <tr>
+                    <td>Tanggal Register</td>
+                    <td>: <?=$waktu['tanggal_regis'];?></td>
+                </tr>
+                <tr><td></td></tr>
                 <tr>
                     <td>Nama Anak</td>
                     <td>: <?=$row['nama_anak']?></td>
@@ -72,19 +97,6 @@
                     <td>Nama Ayah</td>
                     <td>: <?=$row['nama_ayah']?></td>
                 </tr>
-                <!-- <tr>
-                    <td>Tinggi Badan</td>
-                    <td>: <?=$row['tinggi']?></td>
-                </tr>
-                <tr>
-                    <td>Berat Badan</td>
-                    <td>: <?=$row['berat']?></td>
-                </tr> -->
-                <tr><td></td></tr>
-                <tr colspan="2">
-                    <td><?=$row['tanggal_isi']?></td>
-                </tr>
-                
             </table>
         </div>
     </div>
@@ -105,8 +117,8 @@
                 <a href="" title="Instagram">
                     <img src="https://cdn-icons-png.flaticon.com/512/3955/3955024.png" width="40px">
                 </a>
-                <a href="" title="WhatsApp">
-                    <img src="https://cdn-icons-png.flaticon.com/512/5968/5968841.png" width="40px">
+                <a href="" title="Twiter">
+                    <img src="https://cdn-icons-png.flaticon.com/512/3670/3670151.png" width="40px">
                 </a>
             </li>
             <li>

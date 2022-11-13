@@ -1,3 +1,43 @@
+<?php
+    require 'config.php';
+
+    session_start();
+    if(!isset($_SESSION['login'])){
+        echo "
+        <script>
+            alert('Akses ditolak, silahkan login dulu');
+            document.location.href = 'user_login.php';
+        </script>";
+    }else{
+        $ID_user = $_SESSION['ID_user'];
+
+        date_default_timezone_set("Asia/Singapore");
+        if(isset($_POST['submit_feedback'])){
+            $feedback = $_POST['feedback'];
+            $tgl_feedback = implode(" ", $_POST['feed']);
+            
+            $query = "INSERT INTO feedback_table (ID_user, feedback, tanggal) 
+                        VALUES ('$ID_user', '$feedback', '$tgl_feedback')";
+            $result = $db->query($query); 
+            
+            if($result){
+                echo "
+                    <script>
+                        alert('Feedback Berhasil Dikirim');
+                        document.location.href = 'homeUser.php';
+                    </script>           
+                ";
+            }else{
+                echo "
+                    <script>
+                        alert('Feedback Gagal Dikirim');
+                    </script>           
+                ";
+            }
+        }
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -21,6 +61,7 @@
             <li><a href="about.html">About</a></li>
             <li><a href="features.php">Features</a></li>
             <li><a href="#contact">Contact</a></li>
+            <li><a href="form_feedback.php">Feedback</a></li>
         </ul>
         <ul class="menu-2">
             <li><a href="profil.php">Profil</a></li>
@@ -36,36 +77,26 @@
 
     <!-- MAIN-CONTENT -->
     <div class="main-content">
-        <!-- CONTENT 2 -->
-        <div class="content-2">
-            <ul>
-                <li class="text1" align="center">About M-Posyandu</li>
-                <li class="text2" align="center">
-                    <br>Dengan adanya website M-Posyandu ini diharapkan <br>
-                    dapat membantu para orang tua dalam pemberian atau penentuan <br>
-                    imunisasi si anak, dengan begitu anak bisa mendapatkan <br> 
-                    imunisasi yang tepat sesuai dengan usianya.<br><br><br>
-                </li>
-                <li class="text1" align="center">About Us</li>
-                <li class="text2" align="center">
-                    <br>Kelompok 8 Projek Akhir Pemrograman Web<br>
-                    Informatika A 2021<br><br>
-                    <table border="0">
+        <!-- CONTENT 4 -->
+        <div class="content-4">
+            <div class="feedback">
+                <h2 align="center">FORM FEEDBACK</h2>
+                <form action="" method="post" >
+                    <table>
                         <tr>
-                            <td>Ilham Ramadhan</td>
-                            <td>[2109106011]</td>
+                            <td><input type="text" name="feedback" placeholder="Masukkan Komentar / Kritik / Saran "/></td>
                         </tr>
                         <tr>
-                            <td>Al Fiana Nur Priyanti</td>
-                            <td>[2109106022]</td>
-                        </tr>
-                        <tr>
-                            <td>Shafira Octafia</td>
-                            <td>[2109106023]</td>
+                            <td>
+                                <input type="hidden" name="feed[]" value=<?=date("D")?>>
+                                <input type="hidden" name="feed[]" value=<?=date("d/m/Y")?>>
+                                <input type="hidden" name="feed[]" value=<?=date("H:i")?>>
+                                <input type="submit" name="submit_feedback" class="submit" value="Kirim" />
+                            </td>
                         </tr>
                     </table>
-                </li>
-            </ul>
+                </form>
+            </div>
         </div>
     </div>
     
@@ -99,7 +130,6 @@
             </li>
         </ul>
     </div>
-
     <footer>
         <p align="center">© 2022 designed by development's M-Posyandu. All Rights Reserved</p>
     </footer>

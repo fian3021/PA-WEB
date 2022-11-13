@@ -1,11 +1,14 @@
 <?php 
     require 'config.php';
 
+    date_default_timezone_set("Asia/Singapore");
     if((isset($_POST['regis']))){
         $email = $_POST['email'];
         $username = $_POST ['username'];
         $password = $_POST['password'];
         $konfirmasi = $_POST['konfirmasi'];
+
+        $tgl_regis = implode(" ", $_POST['reg']);
 
         //cek username udah digunakan atau belum
         $sql = "SELECT * FROM akun_user WHERE username = '$username'";
@@ -21,8 +24,8 @@
                 
                 $password = password_hash($password, PASSWORD_DEFAULT);
 
-                $query = "INSERT INTO akun_user (email, username, psw)
-                    VALUES ('$email', '$username', '$password')";
+                $query = "INSERT INTO akun_user (email, username, psw, tanggal_regis)
+                    VALUES ('$email', '$username', '$password', '$tgl_regis')";
                 $result = $db->query($query);
 
                 if($result){
@@ -64,19 +67,19 @@
 
                 <form action="" method="post">
                     <div class="input-field">
-                        <input type="text" name="username"placeholder="Enter your name" required>
+                        <input type="text" name="username"placeholder="Masukkan Username" required>
                         <i class="uil uil-user"></i>
                     </div>
                     <div class="input-field">
-                        <input type="text" name="email" placeholder="Enter your email" required>
+                        <input type="text" name="email" placeholder="Masukkan Email" required>
                         <i class="uil uil-envelope icon"></i>
                     </div>
                     <div class="input-field">
-                        <input type="password" name="password" class="password" placeholder="Create a password" required>
+                        <input type="password" name="password" class="password" placeholder="Masukkan Password" required>
                         <i class="uil uil-lock icon"></i>
                     </div>
                     <div class="input-field">
-                        <input type="password" name="konfirmasi" class="password" placeholder="Confirm a password" required>
+                        <input type="password" name="konfirmasi" class="password" placeholder="Konfirmasi Password" required>
                         <i class="uil uil-lock icon"></i>
                         <i class="uil uil-eye-slash showHidePw"></i>
                     </div>
@@ -89,7 +92,10 @@
                     </div>
 
                     <div class="input-field button">
-                        <input type="submit" name = "regis" value="Signup">
+                        <input type="hidden" name="reg[]" value=<?=date("D")?>>
+                        <input type="hidden" name="reg[]" value=<?=date("d/m/Y")?>>
+                        <input type="hidden" name="reg[]" value=<?=date("H:i")?>>
+                        <input type="submit" name = "regis" value="Register">
                     </div>
                 </form>
 

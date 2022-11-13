@@ -1,4 +1,6 @@
 <?php
+    require 'config.php';
+
     session_start();
     if(!isset($_SESSION['login'])){
         echo "
@@ -32,6 +34,7 @@
             <li><a href="about.html">About</a></li>
             <li><a href="#features">Features</a></li>
             <li><a href="#contact">Contact</a></li>
+            <li><a href="form_feedback.php">Feedback</a></li>
         </ul>
         <ul class="menu-2">
             <li><a href="profil.php">Profil</a></li>
@@ -60,12 +63,12 @@
         <!-- CONTENT 2 -->
         <div class="content-2">
             <ul align="center">
-                <li class="text1">About M-Posyandu<br></li>
+                <li class="text1"><br>About M-Posyandu<br></li>
                 <li class="text2">
-                    <br>Dengan adanya website M-Posyandu ini diharapkan <br>
+                <br><br>Dengan adanya website M-Posyandu ini diharapkan <br>
                     dapat membantu para orang tua dalam pemberian atau penentuan <br>
                     imunisasi si anak, dengan begitu anak bisa mendapatkan <br> 
-                    imunisasi yang tepat sesuai dengan usianya.
+                    imunisasi yang tepat sesuai dengan usianya.<br><br><br><br>
                 </li>
             </ul>
         </div>
@@ -79,8 +82,8 @@
                         <a href="formUser.php">Pendataan Profile <br> Anak</a>
                     </p>
                     <p>
-                        <a href=""><img src="https://cdn-icons-png.flaticon.com/512/2822/2822676.png"></a>
-                        <a href="">Lihat Data</a>
+                        <a href="lihat_data.php"><img src="https://cdn-icons-png.flaticon.com/512/2822/2822676.png"></a>
+                        <a href="lihat_data.php">Lihat Data</a>
                     </p>
                 </li>
             </ul>
@@ -103,8 +106,8 @@
                 <a href="" title="Instagram">
                     <img src="https://cdn-icons-png.flaticon.com/512/3955/3955024.png" width="40px">
                 </a>
-                <a href="" title="WhatsApp">
-                    <img src="https://cdn-icons-png.flaticon.com/512/5968/5968841.png" width="40px">
+                <a href="" title="Twiter">
+                    <img src="https://cdn-icons-png.flaticon.com/512/3670/3670151.png" width="40px">
                 </a>
             </li>
             <li>

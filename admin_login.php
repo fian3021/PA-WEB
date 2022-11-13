@@ -1,9 +1,7 @@
 <?php
-    session_start();
+    include "config.php";
 
-    require 'config.php';
-
-    if (isset($_POST['login'])){
+    if (isset($_POST['loginAdmin'])){
         $user = $_POST ['user'];
         $password = $_POST ['password'];
 
@@ -16,8 +14,12 @@
 
             //valid or not
             if (password_verify($password, $row ['psw'])){
-
-                $_SESSION['login'] = $username;
+                session_start();
+                $_SESSION['loginAdmin'] = True;
+                $_SESSION['ID_admin'] = $row['ID_admin'];
+                $_SESSION['kode'] = $row['kode'];
+                $_SESSION['username'] = $user;
+                $_SESSION['tanggal_regis'] = $row['tanggal_regis'];
 
                 echo "<script>
                         alert ('selamat datang $username');
@@ -56,11 +58,11 @@
 
                 <form action="" method="post">
                     <div class="input-field">
-                        <input type="text" name="user" placeholder="Enter your email" required>
+                        <input type="text" name="user" placeholder="Username atau Email" required>
                         <i class="uil uil-envelope icon"></i>
                     </div>
                     <div class="input-field">
-                        <input type="password" class="password" name="password" placeholder="Enter your password" required>
+                        <input type="password" class="password" name="password" placeholder="Password" required>
                         <i class="uil uil-lock icon"></i>
                         <i class="uil uil-eye-slash showHidePw"></i>
                     </div>
@@ -75,13 +77,13 @@
                     </div>
 
                     <div class="input-field button">
-                        <input type="submit" name="login" value="Login">
+                        <input type="submit" name="loginAdmin" value="Login">
                     </div>
                 </form>
 
                 <div class="login-signup">
                     <span class="text">Not a member?
-                        <a href="admin_register.php" class="text signup-link">Signup Now</a>
+                        <a href="admin_register.php" class="text signup-link">Register Now</a>
                     </span>
                 </div>
             </div>

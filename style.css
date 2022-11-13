@@ -172,8 +172,6 @@ nav ul li a:hover {
 .text1 {
     font-family: 'Oswald', sans-serif;
     font-size: 60px;
-    /* margin-top: 15px;
-    margin-bottom: 50px; */
     color: #000000;
 }
 .text2 {
@@ -186,9 +184,9 @@ nav ul li a:hover {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    padding: 10px;
+    padding: 30px;
     align-items: center;
-    height: 80vh;
+    height: auto;
     background-color: #ffffffde;
 }
 .content-3 {
@@ -223,28 +221,60 @@ nav ul li a:hover {
     width: 80px;
     margin-bottom: 15px;
 }
-
+.content-4 {
+    display: flex;
+    flex-direction: row;
+    padding: 30px;
+    justify-content: center;
+    height: 500px;
+    background-color: #ffffffde;
+}
+.feedback form {
+    padding: 10px 25px 10px 10px;
+}
+.feedback form table tr td input[type="text"] {
+    width: 100%;
+    height: 200px;
+    padding-left: 7px;
+    border: none;
+    outline: none;
+    color: #162841;
+    background-color: #76bdff95;
+    box-shadow: 1.5px 1.5px 1.5px 0px rgb(53, 76, 101);
+}
+.feedback form table tr:nth-child(2) td input:last-child{
+    left: 50%;
+    font-size: 17px;
+    margin: 20px 20px;
+    color: white;
+    background-color: #4D96FF;
+    border: none;
+    box-shadow: 1.5px 1.5px 1.5px 0px rgb(53, 76, 101);
+    cursor: pointer;
+}
+.feedback form table tr:nth-child(2) td input[type="submit"]:hover{
+    background-color: #6BCB77;
+}
 /* PROFIL */
 .profil {
     padding: 10px;
-    height: 600px;
+    height: auto;
     background-color: #ffffffda;
 }
 .profil table{
-    width: 50%;
+    width: 80%;
     padding: 20px;
-    margin: 25px 50px;
-    justify-content: center;
-    align-content: center;
+    margin: 5px 50px 25px 45px;
     font-size: 20px;
     border: 1px solid #4D96FF;
     border-radius: 10px;
     box-shadow: 1.5px 1.5px 1.5px 0px rgb(53, 76, 101);
 }
 .profil table tr td{
-    height: 30px;
+    height: 40px;
 }
 .profil table tr td img{
+    margin-bottom: 15px;
     border-radius: 10px;
     box-shadow: 1.5px 1.5px 1.5px 0px rgb(53, 76, 101);
 }
@@ -252,54 +282,107 @@ nav ul li a:hover {
     width: 35%;
 }
 
+/* LIHAT DATA */
+.lihat_data {
+    padding: 10px;
+    height: auto;
+    background-color: #ffffffda;
+}
+.lihat_data table{
+    width: 80%;
+    padding: 20px;
+    margin: 0px 15px 20px 45px;
+    font-size: 20px;
+    border: 1px solid #4D96FF;
+    border-radius: 10px;
+    box-shadow: 1.5px 1.5px 1.5px 0px rgb(53, 76, 101);
+}
+.lihat_data table tr td{
+    height: 40px;
+    border-bottom: 1px solid #4D96FF;
+}
+.lihat_data table tr td:nth-child(1) {
+    width: 45%;
+}
+.lihat_data table tr:last-child td{
+    border-bottom: none;
+    height: 55px;
+}
+.edit a {
+    padding: 0px 8px;
+    margin-top: 15px;
+    border-radius: 5px;
+    font-size: 25px;
+    font-weight: bold;
+    color: white;
+    background-color: #4D96FF;
+    font-family: 'Oswald', sans-serif;
+}
+
+.profil h2,
+.lihat_data h2 {
+    margin-left: 80px;
+    color: #4D96FF;
+}
+
 
 /* FORMULIR USER */
 .form-user {
-    height: 800px;
+    height: 680px;
     padding: 10px;
     background-color: #ffffffc1;
 }
-.form-user li {
+.form-user h2 {
     padding-top: 20px;
-    font-size: 20px;
+    margin-bottom: 20px;
+    font-size: 30px;
 }
 form table{
     position: absolute;
-    top: 50%;
-    left: 50%;
+    top: 52%;
+    left: 48%;
     transform: translate(-50%,-50%);
-    width: 65%;
+    width: 85%;
     border: 2px solid #4D96FF;
-    margin: 0px 20px;
+    margin: 20px 20px;
     padding: 5px 15px;
     color: #162841;
 }
 form table tr {
     height: 40px;
 }
+/* .form-user form table tr td input {
+    z-index: -100;
+}
+.form-user form table tr:nth-child(1) td{
+    height: 60px;
+    font-size: larger;
+    font-weight: bold;
+    font-style: italic;
+} */
 form table tr td:nth-child(1) {
     width: 35%;
 }
 form table tr td:nth-child(2) {
     width: 65%;
 }
-input[type="text"],
-input[type="date"],
-input[type="number"] {
+.form-user form table tr td input[type="text"],
+.form-user form table tr td input[type="date"],
+.form-user form table tr td input[type="number"] {
     width: 100%;
     height: 30px;
+    padding-left: 7px;
     border: none;
+    outline: none;
     color: #162841;
     background-color: #5cb0ff95;
     box-shadow: 1.5px 1.5px 1.5px 0px rgb(53, 76, 101);
 }
 ::placeholder { 
+    justify-content: start;
+    align-items: flex-start;
     color: #162841;
-}
-input[type="file"] {
-	position: absolute;
-	opacity: 0;
-	cursor: pointer;
+    font-style: italic;
 }
 .button {
     padding: 5px 20px;
@@ -317,6 +400,7 @@ input[type="submit"] {
     border: 1px solid #4D96FF;
     box-shadow: 1.5px 1.5px 1.5px 0px rgb(53, 76, 101);
     cursor: pointer;
+    margin-bottom: 20px;
 }
 .input label {
 	color: #333;
@@ -338,6 +422,7 @@ input[type="submit"] {
     height: 200px;
     color: #ffffff;
     background-color: #4d97fff1;
+    cursor: pointer;
 }
 .contact ul {
     display: flex;
@@ -399,7 +484,7 @@ footer {
     }
 
     .menu-1 {
-        width: 45%;        
+        width: 50%;        
     }
     .menu-2 {
         width: 20%;
@@ -425,6 +510,16 @@ footer {
     .info {
         margin-right: 100px;
     }
+
+    /* PROFIL */
+    .profil {
+        height: 750px;
+    }
+    .profil table{
+        width: 85%;
+        margin: 0px 50px;
+    }
+
     /* FOOTER */
     h2 {
         font-size: 35px;
@@ -537,10 +632,57 @@ footer {
     .info p{
         font-weight: 1;
     }
+
+    /* FORMULIR USER */
+    .form-user {
+        height: 800px;
+    }
+    .form-user li {
+        padding-top: 20px;
+        font-size: 16px;
+    }
+    form table{
+        top: 55%;
+        left: 45%;
+        width: 95%;
+        margin: 55px 20px;
+        padding: 5px 15px;
+    }
+    form table tr {
+        height: 50px;
+        font-size: 16px;
+    }
+    form table tr td {
+        border-bottom: 1px solid #4d97ffd2;
+    }
+    form table tr td:nth-child(1) {
+        width: 30%;
+    }
+        
+    /* PROFIL */
+    .profil {
+        height: auto;
+    }
+    .profil table{
+        width: 85%;
+        margin: 0px 50px 20px 30px;
+    }
+    .profil table tr td{
+        height: 30px;
+    }
+    .profil table tr td img{
+        width: 150px;
+    }
+    .profil table tr td:nth-child(1) {
+        width: 20%;
+    }
+    .profil table tr td:nth-child(2) {
+        width: 80%;
+    }
+
     h2 {
         font-size: 30px;
     }
-    
     footer {
         font-size: 12px;
     }

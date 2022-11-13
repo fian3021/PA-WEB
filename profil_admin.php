@@ -1,16 +1,24 @@
 <?php
     require "config.php";
-
+    
     session_start();
-    if(!isset($_SESSION['login'])){
+    if(!isset($_SESSION['loginAdmin'])){
         echo "
         <script>
             alert('Akses ditolak, silahkan login dulu');
             document.location.href = 'admin_login.php';
         </script>";
-    }
-?>
+    }else{
+        $ID_admin = $_SESSION['ID_admin'];
+        $kode = $_SESSION['kode'];
+        $user = $_SESSION['username'];  
+        $tgl_regis = $_SESSION['tanggal_regis'];
 
+    }
+    
+    $result = mysqli_query($db, "SELECT * FROM data_admin WHERE kode = '$kode'");
+    
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -22,7 +30,7 @@
         @import url('https://fonts.googleapis.com/css2?family=Oswald&family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
     </style>
     <link rel="stylesheet" href="style2.css">
-    <title>Admin Page M-Posyandu</title>
+    <title>M-Posyandu</title>
 </head>
 <body>
     <!-- NAVIGATION BAR -->
@@ -32,8 +40,8 @@
         </div>
         <ul class="menu-1">
             <li><a href="homeAdmin.php">Home</a></li>
-            <li><a href="about_admin.html">About</a></li>
-            <li><a href="#features">Features</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="features_admin.php">Features</a></li>
             <li><a href="feedback.php">Feedback</a></li>
         </ul>
         <ul class="menu-2">
@@ -50,37 +58,36 @@
 
     <!-- MAIN-CONTENT -->
     <div class="main-content">
-        <!-- CONTENT 1 -->
-        <div class="content-1">
-            <ul align="center">
-                <li class="text1">Administrator Page<br>M-Posyandu</li>
-            </ul>
-            <ul>
-                <img src="https://cdn-icons-png.flaticon.com/512/3284/3284615.png" width="350px">
-            </ul>
-        </div>
-        <!-- CONTENT 2 -->
-        <div id="features" class="content-2">
-            <ul align="center">
-                <li class="text1">Features<br><br></li>
-                <li class="text3">
-                    <p>
-                        <a href=""><img src="https://cdn-icons-png.flaticon.com/512/684/684831.png"></a>
-                        <a href="">Data Imunisasi<br> Anak</a>
-                    </p>
-                    <p>
-                        <a href=""><img src="https://cdn-icons-png.flaticon.com/512/833/833275.png"></a>
-                        <a href="">Mengubah Data</a>
-                    </p>
-                    <p>
-                        <a href=""><img src="https://cdn-icons-png.flaticon.com/512/3720/3720491.png"></a>
-                        <a href="">Menghapus Data</a>
-                    </p>
-                </li>
-            </ul>
+        <!-- PROFIL -->
+        <div class="profil">
+            <h2>Profil Admin</h2>
+            <?php
+                $row = mysqli_fetch_array($result);
+            ?>
+            <table>
+                <tr>
+                    <td>Username</td>
+                    <td>: <?=$user;?></td>
+                </tr>
+                <tr><td></td></tr>
+                <tr>
+                    <td>Nama</td>
+                    <td>: <?=$row['nama']?></td>
+                </tr>
+                <tr>
+                    <td>Jenis Kelamin</td>
+                    <td>: <?=$row['gender']?></td>
+                </tr>
+                <tr><td></td></tr>
+                <tr colspan="2">
+                    <td>Tanggal Register</td>
+                    <td>: <?=$tgl_regis;?></td>
+                </tr>
+                
+            </table>
         </div>
     </div>
-
+    
     <!-- FOOTER -->
     <footer>
         <p align="center">© 2022 designed by development's M-Posyandu. All Rights Reserved</p>

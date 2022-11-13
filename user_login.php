@@ -1,5 +1,4 @@
 <?php
-    session_start();
 
     require 'config.php';
 
@@ -16,8 +15,11 @@
 
             //valid or not
             if (password_verify($password, $row ['psw'])){
-
-                $_SESSION['login'] = $username;
+                session_start();
+                $_SESSION['login'] = True;
+                $_SESSION['ID_user'] = $row['ID_user'];
+                $_SESSION['username'] = $user;
+                $_SESSION['tanggal_regis'] = $row['tgl_regis'];
 
                 echo "<script>
                         alert ('selamat datang $username');
@@ -56,11 +58,11 @@
 
                 <form action="" method="post">
                     <div class="input-field">
-                        <input type="text" name="user" placeholder="Enter your email" required>
+                        <input type="text" name="user" placeholder="Username atau Email" required>
                         <i class="uil uil-envelope icon"></i>
                     </div>
                     <div class="input-field">
-                        <input type="password" class="password" name="password" placeholder="Enter your password" required>
+                        <input type="password" class="password" name="password" placeholder="Password" required>
                         <i class="uil uil-lock icon"></i>
                         <i class="uil uil-eye-slash showHidePw"></i>
                     </div>
@@ -81,7 +83,7 @@
 
                 <div class="login-signup">
                     <span class="text">Not a member?
-                        <a href="user_register.php" class="text signup-link">Signup Now</a>
+                        <a href="user_register.php" class="text signup-link">Register Now</a>
                     </span>
                 </div>
             </div>

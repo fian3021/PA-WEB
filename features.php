@@ -36,34 +36,19 @@
 
     <!-- MAIN-CONTENT -->
     <div class="main-content">
-        <!-- CONTENT 2 -->
-        <div class="content-2">
-            <ul>
-                <li class="text1" align="center">About M-Posyandu</li>
-                <li class="text2" align="center">
-                    <br>Dengan adanya website M-Posyandu ini diharapkan <br>
-                    dapat membantu para orang tua dalam pemberian atau penentuan <br>
-                    imunisasi si anak, dengan begitu anak bisa mendapatkan <br> 
-                    imunisasi yang tepat sesuai dengan usianya.<br><br><br>
-                </li>
-                <li class="text1" align="center">About Us</li>
-                <li class="text2" align="center">
-                    <br>Kelompok 8 Projek Akhir Pemrograman Web<br>
-                    Informatika A 2021<br><br>
-                    <table border="0">
-                        <tr>
-                            <td>Ilham Ramadhan</td>
-                            <td>[2109106011]</td>
-                        </tr>
-                        <tr>
-                            <td>Al Fiana Nur Priyanti</td>
-                            <td>[2109106022]</td>
-                        </tr>
-                        <tr>
-                            <td>Shafira Octafia</td>
-                            <td>[2109106023]</td>
-                        </tr>
-                    </table>
+        <!-- CONTENT 3 -->
+        <div class="content-3">
+            <ul align="center">
+                <li class="text1">Features<br><br></li>
+                <li class="text3">
+                    <p>
+                        <a href="formUser.php"><img src="https://cdn-icons-png.flaticon.com/512/684/684831.png"></a>
+                        <a href="formUser.php">Pendataan Profile <br> Anak</a>
+                    </p>
+                    <p>
+                        <a href="lihat_data.php"><img src="https://cdn-icons-png.flaticon.com/512/2822/2822676.png"></a>
+                        <a href="lihat_data.php">Lihat Data</a>
+                    </p>
                 </li>
             </ul>
         </div>
@@ -99,7 +84,6 @@
             </li>
         </ul>
     </div>
-
     <footer>
         <p align="center">© 2022 designed by development's M-Posyandu. All Rights Reserved</p>
     </footer>
