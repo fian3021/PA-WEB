@@ -3,7 +3,7 @@
 $server = "localhost";
 $username = "root";
 $password = "";
-$db_name = "m-posyandu";
+$db_name = "posyandu";
 
 $db = mysqli_connect($server, $username, $password, $db_name);
 
