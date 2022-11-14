@@ -338,33 +338,23 @@ nav ul li a:hover {
     margin-bottom: 20px;
     font-size: 30px;
 }
-form table{
+.form-user form table{
     top: 52%;
     left: 48%;
     justify-content: center;
-    transform: translate(-50%,-50%);
     width: 85%;
     border: 2px solid #4D96FF;
     margin: 20px 20px;
     padding: 5px 15px;
     color: #162841;
 }
-form table tr {
+.form-user form table tr {
     height: 40px;
 }
-/* .form-user form table tr td input {
-    z-index: -100;
-}
-.form-user form table tr:nth-child(1) td{
-    height: 60px;
-    font-size: larger;
-    font-weight: bold;
-    font-style: italic;
-} */
-form table tr td:nth-child(1) {
+.form-user form table tr td:nth-child(1) {
     width: 35%;
 }
-form table tr td:nth-child(2) {
+.form-user form table tr td:nth-child(2) {
     width: 65%;
 }
 .form-user form table tr td input[type="text"],

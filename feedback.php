@@ -8,10 +8,10 @@
             alert('Akses ditolak, silahkan login dulu');
             document.location.href = 'user_admin.php';
         </script>";
-    }else{
-        $user = $_SESSION['username'];  
-        
+    }else{        
         $feed = mysqli_query($db, "SELECT * FROM feedback_table");
+        $user = $feed['ID_user']
+        $result = mysqli_query($db, "SELECT * FROM akun_user WHERE ID_user = '$user'");
     }
 ?>
 
@@ -65,7 +65,7 @@
                     <td><?=$row['tanggal'];?></td>
                 </tr>
                 <tr colspan="2" align="left">
-                    <td><?=$user;?> : <?=$row['feedback'];?></td>
+                    <td><?=$result['username'];?> : <?=$row['feedback'];?></td>
                 </tr>
             </table>
             <?php

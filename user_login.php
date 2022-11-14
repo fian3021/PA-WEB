@@ -82,7 +82,7 @@
                 </form>
 
                 <div class="login-signup">
-                    <span class="text">Not a member?
+                    <span class="text">Belum memiliki akun?
                         <a href="user_register.php" class="text signup-link">Register Now</a>
                     </span>
                 </div>

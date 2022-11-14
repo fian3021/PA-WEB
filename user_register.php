@@ -100,7 +100,7 @@
                 </form>
 
                 <div class="login-signup">
-                    <span class="text">Already a member?
+                    <span class="text">Sudah memiliki akun?
                         <a href="user_login.php" class="text login-link">Login Now</a>
                     </span>
                 </div>
