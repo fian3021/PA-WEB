@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 13 Nov 2022 pada 17.09
+-- Waktu pembuatan: 14 Nov 2022 pada 10.35
 -- Versi server: 10.4.24-MariaDB
 -- Versi PHP: 8.1.6
 
@@ -36,6 +36,13 @@ CREATE TABLE `akun_admin` (
   `tanggal_regis` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data untuk tabel `akun_admin`
+--
+
+INSERT INTO `akun_admin` (`ID_admin`, `kode`, `email`, `username`, `psw`, `tanggal_regis`) VALUES
+(1, 'A1K802', 'alfiananp21803@gmail.com', 'alfiananur3021', '$2y$10$ZyDVqATHFPgpXasms5UNbe3/Y3Q6NfAgAbfuAYFdWG5BBSPKCj03.', 'Mon 14/11/2022 15:55');
+
 -- --------------------------------------------------------
 
 --
@@ -49,6 +56,14 @@ CREATE TABLE `akun_user` (
   `psw` varchar(255) NOT NULL,
   `tanggal_regis` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data untuk tabel `akun_user`
+--
+
+INSERT INTO `akun_user` (`ID_user`, `email`, `username`, `psw`, `tanggal_regis`) VALUES
+(2, 'fiana@gmail.com', 'alfiana', '$2y$10$QgUU9dsr740/k6ltBKB0f.phy4hWATjkMhB6SDJ0LlHcGMgk7wE9O', 'Mon 14/11/2022 15:03'),
+(3, 'jenita@gmail.com', 'jeni', '$2y$10$.ehtVPPCtgtAXt0imZoO4.z5BKSvrNPsm5aMWCbbdPS9XLScVLs7.', 'Mon 14/11/2022 15:49');
 
 -- --------------------------------------------------------
 
@@ -95,6 +110,15 @@ CREATE TABLE `data_anak` (
   `imunisasi` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data untuk tabel `data_anak`
+--
+
+INSERT INTO `data_anak` (`ID`, `ID_user`, `nama_anak`, `jenis_kelamin`, `tanggal_lahir`, `tinggi`, `berat`, `nama_ibu`, `nama_ayah`, `foto_anak`, `tanggal_isi`, `imunisasi`) VALUES
+(5, 2, 'Fina', 'Perempuan', '2018-08-21', 102, 13, 'Safa', 'Galih', 'Fina.jpg', 'Mon 14/11/2022 15:24', 'DPT'),
+(6, 2, 'Akbar', 'Laki-Laki', '2020-02-17', 89, 9, 'Nur', 'Andi', 'Akbar.jpg', 'Mon 14/11/2022 15:44', 'PVC'),
+(7, 3, 'Kalia', 'Perempuan', '2021-01-09', 83, 8, 'Safira', 'Saka', 'Kalia.jpg', 'Mon 14/11/2022 15:50', 'Polio');
+
 -- --------------------------------------------------------
 
 --
@@ -107,6 +131,13 @@ CREATE TABLE `feedback_table` (
   `feedback` text NOT NULL,
   `tanggal` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data untuk tabel `feedback_table`
+--
+
+INSERT INTO `feedback_table` (`ID`, `ID_user`, `feedback`, `tanggal`) VALUES
+(2, 2, 'Terimakasih Banyak', 'Mon 14/11/2022 15:26');
 
 --
 -- Indexes for dumped tables
@@ -150,13 +181,13 @@ ALTER TABLE `feedback_table`
 -- AUTO_INCREMENT untuk tabel `akun_admin`
 --
 ALTER TABLE `akun_admin`
-  MODIFY `ID_admin` int(10) NOT NULL AUTO_INCREMENT;
+  MODIFY `ID_admin` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT untuk tabel `akun_user`
 --
 ALTER TABLE `akun_user`
-  MODIFY `ID_user` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `ID_user` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT untuk tabel `data_admin`
@@ -168,13 +199,13 @@ ALTER TABLE `data_admin`
 -- AUTO_INCREMENT untuk tabel `data_anak`
 --
 ALTER TABLE `data_anak`
-  MODIFY `ID` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `ID` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT untuk tabel `feedback_table`
 --
 ALTER TABLE `feedback_table`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
