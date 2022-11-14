@@ -338,7 +338,7 @@ nav ul li a:hover {
     margin-bottom: 20px;
     font-size: 30px;
 }
-form table{
+.form-user form table{
     position: absolute;
     top: 52%;
     left: 48%;
