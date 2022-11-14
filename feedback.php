@@ -10,8 +10,6 @@
         </script>";
     }else{        
         $feed = mysqli_query($db, "SELECT * FROM feedback_table");
-        $user = $feed['ID_user']
-        $result = mysqli_query($db, "SELECT * FROM akun_user WHERE ID_user = '$user'");
     }
 ?>
 
@@ -65,7 +63,7 @@
                     <td><?=$row['tanggal'];?></td>
                 </tr>
                 <tr colspan="2" align="left">
-                    <td><?=$result['username'];?> : <?=$row['feedback'];?></td>
+                    <td><?=$row['username'];?> : <?=$row['feedback'];?></td>
                 </tr>
             </table>
             <?php

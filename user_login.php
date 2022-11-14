@@ -18,7 +18,7 @@
                 session_start();
                 $_SESSION['login'] = True;
                 $_SESSION['ID_user'] = $row['ID_user'];
-                $_SESSION['username'] = $user;
+                $_SESSION['user'] = $username;
                 $_SESSION['tanggal_regis'] = $row['tgl_regis'];
 
                 echo "<script>

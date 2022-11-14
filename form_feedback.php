@@ -10,14 +10,15 @@
         </script>";
     }else{
         $ID_user = $_SESSION['ID_user'];
+        $username = $_SESSION['user'];
 
         date_default_timezone_set("Asia/Singapore");
         if(isset($_POST['submit_feedback'])){
             $feedback = $_POST['feedback'];
             $tgl_feedback = implode(" ", $_POST['feed']);
             
-            $query = "INSERT INTO feedback_table (ID_user, feedback, tanggal) 
-                        VALUES ('$ID_user', '$feedback', '$tgl_feedback')";
+            $query = "INSERT INTO feedback_table (ID_user, username, feedback, tanggal) 
+                        VALUES ('$ID_user', '$username', '$feedback', '$tgl_feedback')";
             $result = $db->query($query); 
             
             if($result){

@@ -10,7 +10,7 @@
         </script>";
     }else{
         $ID_user = $_SESSION['ID_user'];
-        $user = $_SESSION['username'];  
+        $username = $_SESSION['user'];  
         $tgl_regis = $_SESSION['tanggal_regis'];
 
         $result = mysqli_query($db, "SELECT * FROM data_anak WHERE ID_user = '$ID_user'");
