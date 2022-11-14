@@ -64,7 +64,6 @@
                     <div class="input-field">
                         <input type="password" class="password" name="password" placeholder="Password" required>
                         <i class="uil uil-lock icon"></i>
-                        <i class="uil uil-eye-slash showHidePw"></i>
                     </div>
 
                     <div class="checkbox-text">
@@ -72,8 +71,6 @@
                             <input type="checkbox" id="logCheck">
                             <label for="logCheck" class="text">Remember me</label>
                         </div>
-                        
-                        <a href="#" class="text">Forgot password?</a>
                     </div>
 
                     <div class="input-field button">
