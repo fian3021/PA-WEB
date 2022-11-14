@@ -2,17 +2,17 @@
     require 'config.php';
 
     session_start();
-    // if(!isset($_SESSION['login'])){
-    //     echo "
-    //     <script>
-    //         alert('Akses ditolak, silahkan login dulu');
-    //         document.location.href = 'user_login.php';
-    //     </script>";
-    // }else{
+    if(!isset($_SESSION['loginAdmin'])){
+        echo "
+        <script>
+            alert('Akses ditolak, silahkan login dulu');
+            document.location.href = 'user_admin.php';
+        </script>";
+    }else{
         $user = $_SESSION['username'];  
         
         $feed = mysqli_query($db, "SELECT * FROM feedback_table");
-    // }
+    }
 ?>
 
 <!DOCTYPE html>
@@ -25,7 +25,7 @@
         @import url('https://fonts.googleapis.com/css2?family=Oswald&family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
     </style>
     <link rel="stylesheet" href="style2.css">
-    <title>M-Posyandu</title>
+    <title>Admin M-Posyandu</title>
 </head>
 <body>
     <!-- NAVIGATION BAR -->
@@ -34,13 +34,13 @@
             <h3>M-Posyandu</h3>
         </div>
         <ul class="menu-1">
-            <li><a href="homeUser.php">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="features.php">Features</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li><a href="homeAdmin.php">Home</a></li>
+            <li><a href="about_admin.html">About</a></li>
+            <li><a href="homeAdmin.php#features">Features</a></li>
+            <li><a href="feedback.php">Feedback</a></li>
         </ul>
         <ul class="menu-2">
-            <li><a href="profil.php">Profil</a></li>
+            <li><a href="profil_admin.php">Profil</a></li>
             <li><a href="logout.php">Logout</a></li>
         </ul>
         <div class="menu-toggle">

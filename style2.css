@@ -194,6 +194,173 @@ h1 {
     box-shadow: 1.5px 1.5px 1.5px 0px rgb(53, 76, 101);
 }
 
+/* LIHAT DATA ANAK PADA ADMIN*/
+.lihatdata {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    align-items: center;
+    height: 100vh;
+    background-color: #ffffffde;
+}
+.lihatdata table {
+    width: 98%;
+    height: auto;
+}
+.lihatdata h2 {
+    margin: 20px 0px;
+    font-family: 'Oswald', sans-serif;
+    font-size: 50px;
+}
+.cari {
+    display: flex;
+    flex-direction: row;
+    width: auto;
+    margin-bottom: 20px;
+}
+.search {
+    padding:8px 15px;
+    background: #6bcb788d;
+    border: #6BCB77;
+    font-style: italic;
+}
+.search:hover {
+  background: #4d97ff61;
+}
+.button {
+    padding:8px 15px;
+    position:relative;
+    border: #6BCB77;
+    background-color:#6BCB77;
+    color: #1e375a;
+    font-style: italic;
+    cursor: pointer;
+}
+.button:hover  {
+    color: #cdffd3;
+    background-color: #4d97ff63;
+}
+::placeholder { 
+    color: #1e375a;
+}
+.lihatdata table tr {
+    /* height: auto; */
+    padding: 5px 5px;
+}
+.add,
+.del {
+    padding: 5px;
+}
+.add a b,
+.del a b {
+    text-decoration: none;
+    color: #6BCB77;
+}
+.add a b:hover,
+.del a b:hover {
+    border-bottom:1px solid #6BCB77;
+}
+
+/* Tambah Data Imunisasi */
+.tambah {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    align-items: center;
+    height: auto;
+    background-color: #ffffffde;
+}
+.tambah h2 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 50px;
+    margin: 20px 0px 40px 0px;
+}
+.tambah table {
+    margin: 20px;
+    width: 70%;
+    padding: 20px;
+    margin: 0px 15px 20px 45px;
+    font-size: 20px;
+    border: 1px solid #6BCB77;
+    border-radius: 10px;
+    box-shadow: 1.5px 1.5px 1.5px 0px rgb(53, 101, 59);
+}
+.tambah table tr{
+    height: 40px;
+}
+.tambah table tr:first-child td,
+.tambah table tr:nth-child(2) td,
+.tambah table tr:nth-child(3) td,
+.tambah table tr:nth-child(4) td,
+.tambah table tr:nth-child(5) td,
+.tambah table tr:nth-child(6) td,
+.tambah table tr:nth-child(7) td,
+.tambah table tr:nth-child(8) td {
+    border-bottom: 1px solid #6BCB77;
+    padding: 5px;
+}
+.tambah table td:first-child{
+    width: 50%;
+}
+.btn {
+    margin: 20px 0px 5px 0px;
+    background-color: #6BCB77;
+    color: white;
+    padding: 7px 15px;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    font-family: 'Oswald', sans-serif;
+    font-size: 20px;
+    cursor: pointer;
+}
+.btn:hover {
+    background-color: #4d97ffbb;
+}
+.tambah table td label{
+    display: flex;
+    flex-direction: row;
+    margin: 10px 5px;
+}
+.tambah table td label input{
+    margin: 7px 5px;
+}
+
+/* PROFIL */
+.profil {
+    padding: 10px;
+    height: 100vh;
+    background-color: #ffffffda;
+}
+.profil h2{
+    font-family: 'Oswald', sans-serif;
+    font-size: 40px;
+    margin: 15px 0px 15px 60px;
+}
+.profil table{
+    width: 80%;
+    padding: 20px;
+    margin: 5px 50px 25px 45px;
+    font-size: 20px;
+    border: 1px solid #6BCB77;
+    border-radius: 10px;
+    box-shadow: 1.5px 1.5px 1.5px 0px rgb(53, 76, 101);
+}
+.profil table tr td{
+    height: 40px;
+}
+.profil table tr td img{
+    margin-bottom: 15px;
+    border-radius: 10px;
+    box-shadow: 1.5px 1.5px 1.5px 0px rgb(53, 76, 101);
+}
+.profil table tr td:nth-child(1) {
+    width: 35%;
+}
+
+
+
+
 
 /* FOOTER */
 footer {
@@ -206,9 +373,6 @@ footer {
     font-family: 'Oswald', sans-serif;
     font-size: 15px;
 }
-
-
-
 
 /* RESPONSIVE */
 

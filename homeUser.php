@@ -83,7 +83,7 @@
                     </p>
                     <p>
                         <a href="lihat_data.php"><img src="https://cdn-icons-png.flaticon.com/512/2822/2822676.png"></a>
-                        <a href="lihat_data.php">Lihat Data</a>
+                        <a href="lihat_data.php">Hasil Data</a>
                     </p>
                 </li>
             </ul>

@@ -38,8 +38,9 @@
         <ul class="menu-1">
             <li><a href="homeUser.php">Home</a></li>
             <li><a href="about.html">About</a></li>
-            <li><a href="features.php">Features</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li><a href="homeUser.php#features">Features</a></li>
+            <li><a href="homeUser.php#contact">Contact</a></li>
+            <li><a href="form_feedback.php">Feedback</a></li>
         </ul>
         <ul class="menu-2">
             <li><a href="profil.php">Profil</a></li>
@@ -67,7 +68,7 @@
                     <td>Data <?=$i;?></td>
                 </tr>
                 <tr>
-                    <td>Tanggal Pengisian Formulir: <?=$row['tanggal_isi']?></td>
+                    <td>Tanggal Pengisian Formulir:<br> <?=$row['tanggal_isi']?></td>
                 </tr>
                 <tr>
                     <td><br>Nama Anak</td>
@@ -99,7 +100,7 @@
                 </tr>
                 <tr>
                     <td>Foto Anak</td>
-                    <td>: <?=$row['foto_anak']?></td>
+                    <td>: <img src="Foto_Anak/<?=$row['foto_anak']?>" alt="" width="180px" align="center"></td>
                 </tr>
                 <tr>
                     <td>Jenis Imunisasi</td>
@@ -107,7 +108,10 @@
                 </tr>
                 <tr>
                     <td></td>
-                    <td align="right" class="edit"><a href="edit.php?id=<?=$row['ID']?>"><b>Edit</b></a></td>
+                    <td align="right" class="edit">
+                        <a href="edit.php?ID=<?=$row['ID']?>"><b>Edit</b></a>
+                        <a href="hapus.php?ID=<?=$row['ID']?>"><b>Hapus</b></a>
+                    </td>
                 </tr>
             </table>
             <?php

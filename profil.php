@@ -39,8 +39,9 @@
         <ul class="menu-1">
             <li><a href="homeUser.php">Home</a></li>
             <li><a href="about.html">About</a></li>
-            <li><a href="features.php">Features</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li><a href="homeUser.php#features">Features</a></li>
+            <li><a href="homeUser.php#contact">Contact</a></li>
+            <li><a href="form_feedback.php">Feedback</a></li>
         </ul>
         <ul class="menu-2">
             <li><a href="profil.php">Profil</a></li>
@@ -69,7 +70,7 @@
                 </tr>
                 <tr>
                     <td>Username</td>
-                    <td>: <?=$user;?></td>
+                    <td>: <?=$waktu['username']?></td>
                 </tr>
                 <tr>
                     <td>Tanggal Register</td>

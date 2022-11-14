@@ -24,7 +24,7 @@
                 echo "
                     <script>
                         alert('Feedback Berhasil Dikirim');
-                        document.location.href = 'homeUser.php';
+                        document.location.href = 'form_feedback.php';
                     </script>           
                 ";
             }else{
@@ -59,8 +59,8 @@
         <ul class="menu-1">
             <li><a href="homeUser.php">Home</a></li>
             <li><a href="about.html">About</a></li>
-            <li><a href="features.php">Features</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li><a href="homeUser.php#features">Features</a></li>
+            <li><a href="homeUser.php#contact">Contact</a></li>
             <li><a href="form_feedback.php">Feedback</a></li>
         </ul>
         <ul class="menu-2">

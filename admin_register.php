@@ -36,6 +36,7 @@
                     if($result){
                         echo "<script>
                                 alert('Registrasi Berhasil')
+                                document.location.href='admin_login.php';
                             </script>";
                     }else {
                         echo "<script>
@@ -94,14 +95,6 @@
                     <div class="input-field">
                         <input type="password" name="konfirmasi" class="password" placeholder="Konfirmasi Password" required>
                         <i class="uil uil-lock icon"></i>
-                        <i class="uil uil-eye-slash showHidePw"></i>
-                    </div>
-
-                    <div class="checkbox-text">
-                        <div class="checkbox-content">
-                            <input type="checkbox" id="termCon">
-                            <label for="termCon" class="text">I accepted all terms and conditions</label>
-                        </div>
                     </div>
 
                     <div class="input-field button">
@@ -113,7 +106,7 @@
                 </form>
 
                 <div class="login-signup">
-                    <span class="text">Already a member?
+                    <span class="text">Sudah Memiliki Akun?
                         <a href="admin_login.php" class="text login-link">Login Now</a>
                     </span>
                 </div>

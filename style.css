@@ -255,6 +255,7 @@ nav ul li a:hover {
 .feedback form table tr:nth-child(2) td input[type="submit"]:hover{
     background-color: #6BCB77;
 }
+
 /* PROFIL */
 .profil {
     padding: 10px;
@@ -338,9 +339,9 @@ nav ul li a:hover {
     font-size: 30px;
 }
 form table{
-    position: absolute;
     top: 52%;
     left: 48%;
+    justify-content: center;
     transform: translate(-50%,-50%);
     width: 85%;
     border: 2px solid #4D96FF;

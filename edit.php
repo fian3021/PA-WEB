@@ -11,6 +11,16 @@
     }else{
         $ID_user = $_SESSION['ID_user'];
 
+        // Menangkap id dari url yang dikirimkan
+        if(isset($_GET['ID'])){
+            $id = $_GET['ID'];
+        };
+
+        // Tampilkan value inputan dari id
+        $result = mysqli_query($db, 
+            "SELECT * FROM data_anak WHERE ID='$id'");
+        $row = mysqli_fetch_array($result);
+
         date_default_timezone_set("Asia/Singapore");
         if(isset($_POST['submit'])){
             $nama_anak = $_POST['nama-anak'];
@@ -30,24 +40,35 @@
             $tmp = $_FILES['foto_anak']['tmp_name'];
 
             if(move_uploaded_file($tmp, "Foto_Anak/".$foto_anak)){
-                $query = "INSERT INTO data_anak (ID_user, nama_anak, jenis_kelamin, tanggal_lahir, tinggi, berat, nama_ibu, nama_ayah, foto_anak, tanggal_isi) 
-                            VALUES ('$ID_user', '$nama_anak', '$gender','$tgl_lahir','$tinggi', '$berat', '$nama_ibu', '$nama_ayah', '$foto_anak', '$waktu')";
+                $query = "UPDATE data_anak SET
+                ID_user = '$ID_user', 
+                nama_anak = '$nama_anak', 
+                jenis_kelamin = '$gender', 
+                tanggal_lahir = '$tgl_lahir', 
+                tinggi = '$tinggi',
+                berat = '$berat', 
+                nama_ibu = '$nama_ibu',
+                nama_ayah = '$nama_ayah', 
+                foto_anak = '$foto_anak',
+                tanggal_isi = '$waktu'
+                WHERE ID = '$id'";
                 $result = $db->query($query); 
                 
                 if($result){
                     echo "
                         <script>
-                            alert('Pengisian Data Berhasil');
-                            document.location.href = 'homeUser.php';
+                            alert('Perubahan Data Berhasil Disimpan');
+                            document.location.href = 'lihat_data.php';
                         </script>           
                     ";
                 }else{
                     echo "
                         <script>
-                            alert('Pengisian Data Gagal');
+                            alert('Perubahan Data Gagal');
                         </script>           
                     ";
                 }
+            
             }
         }
     }
@@ -104,7 +125,7 @@
                             <label>Nama Anak</label>
                         </td>
                         <td>
-                            <input type="text" name="nama-anak" placeholder=" Masukkan Nama Anak..." />
+                            <input type="text" name="nama-anak" placeholder=" Masukkan Nama Anak..." value=<?=$row['nama_anak']?> />
                         </td>
                     </tr>
                     <tr>
@@ -121,7 +142,7 @@
                             <label>Tanggal Lahir</label>
                         </td>
                         <td>
-                            <input type="date" name="tanggal-lahir"/>
+                            <input type="date" name="tanggal-lahir" value=<?=$row['tanggal_lahir']?>/>
                         </td>
                     </tr>
                     <tr>
@@ -129,7 +150,7 @@
                             <label>Tinggi Badan Anak</label>
                         </td>
                         <td>
-                            <input type="number" name="tinggi-badan" placeholder=" Masukkan Tinggi..." />
+                            <input type="number" name="tinggi-badan" placeholder=" Masukkan Tinggi..." value=<?=$row['tinggi']?> /> 
                         </td>
                     </tr>
                     <tr>
@@ -137,7 +158,7 @@
                             <label>Berat Badan Anak</label>
                         </td>
                         <td>
-                            <input type="number" name="berat-badan" placeholder=" Masukkan Berat..." />
+                            <input type="number" name="berat-badan" placeholder=" Masukkan Berat..." value=<?=$row['berat']?> /> 
                         </td>
                     </tr>
                     <tr></tr>
@@ -146,7 +167,7 @@
                             <label>Nama Ibu</label>
                         </td>
                         <td>
-                            <input type="text" name="nama-ibu" placeholder=" Masukkan Nama Ibu..." />
+                            <input type="text" name="nama-ibu" placeholder=" Masukkan Nama Ibu..." value=<?=$row['nama_ibu']?> />
                         </td>
                     </tr>
                     <tr>
@@ -154,7 +175,7 @@
                             <label>Nama Ayah</label>
                         </td>
                         <td>
-                            <input type="text" name="nama-ayah" placeholder=" Masukkan Nama Ayah..." />
+                            <input type="text" name="nama-ayah" placeholder=" Masukkan Nama Ayah..." value=<?=$row['nama_ayah']?> >
                         </td>
                     </tr>
                     <tr>
@@ -163,8 +184,7 @@
                         </td>
                         <td>
                             <br>
-                            <input type="file" name="foto_anak">
-                            <!-- <span class="button">Pilih File</span> -->
+                            <input type="file" name="foto_anak" value=<?=$row['foto_anak']?>>
                             <br><br>
                         </td>
                     </tr>
@@ -174,7 +194,7 @@
                             <input type="hidden" name="isi[]" value=<?=date("D")?>>
                             <input type="hidden" name="isi[]" value=<?=date("d/m/Y")?>>
                             <input type="hidden" name="isi[]" value=<?=date("H:i")?>><br><br>
-                            <input type="submit" name="submit" class="submit" value="Simpan" />
+                            <input type="submit" name="submit" class="submit" value="Simpan Perubahan" />
                         </td>
                     </tr>
                 </table>

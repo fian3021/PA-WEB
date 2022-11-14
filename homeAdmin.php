@@ -2,7 +2,7 @@
     require "config.php";
 
     session_start();
-    if(!isset($_SESSION['login'])){
+    if(!isset($_SESSION['loginAdmin'])){
         echo "
         <script>
             alert('Akses ditolak, silahkan login dulu');
@@ -65,16 +65,12 @@
                 <li class="text1">Features<br><br></li>
                 <li class="text3">
                     <p>
-                        <a href=""><img src="https://cdn-icons-png.flaticon.com/512/684/684831.png"></a>
-                        <a href="">Data Imunisasi<br> Anak</a>
+                        <a href="lihatdata_admin.php"><img src="https://cdn-icons-png.flaticon.com/512/684/684831.png"></a>
+                        <a href="lihatdata_admin.php">Data Imunisasi<br> Anak</a>
                     </p>
                     <p>
-                        <a href=""><img src="https://cdn-icons-png.flaticon.com/512/833/833275.png"></a>
-                        <a href="">Mengubah Data</a>
-                    </p>
-                    <p>
-                        <a href=""><img src="https://cdn-icons-png.flaticon.com/512/3720/3720491.png"></a>
-                        <a href="">Menghapus Data</a>
+                        <a href="editdata_admin.php"><img src="https://cdn-icons-png.flaticon.com/512/833/833275.png"></a>
+                        <a href="editdata_admin.php">Mengubah Data<br> Imunisasi</a>
                     </p>
                 </li>
             </ul>

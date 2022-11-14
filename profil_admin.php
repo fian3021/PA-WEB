@@ -41,7 +41,7 @@
         <ul class="menu-1">
             <li><a href="homeAdmin.php">Home</a></li>
             <li><a href="about.html">About</a></li>
-            <li><a href="features_admin.php">Features</a></li>
+            <li><a href="homeAdmin.php#features">Features</a></li>
             <li><a href="feedback.php">Feedback</a></li>
         </ul>
         <ul class="menu-2">
@@ -69,7 +69,10 @@
                     <td>Username</td>
                     <td>: <?=$user;?></td>
                 </tr>
-                <tr><td></td></tr>
+                <tr>
+                    <td>Kode Admin</td>
+                    <td>: <?=$row['kode']?></td>
+                </tr>
                 <tr>
                     <td>Nama</td>
                     <td>: <?=$row['nama']?></td>
@@ -78,12 +81,10 @@
                     <td>Jenis Kelamin</td>
                     <td>: <?=$row['gender']?></td>
                 </tr>
-                <tr><td></td></tr>
                 <tr colspan="2">
                     <td>Tanggal Register</td>
                     <td>: <?=$tgl_regis;?></td>
                 </tr>
-                
             </table>
         </div>
     </div>
