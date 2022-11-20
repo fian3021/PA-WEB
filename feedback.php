@@ -6,7 +6,7 @@
         echo "
         <script>
             alert('Akses ditolak, silahkan login dulu');
-            document.location.href = 'user_admin.php';
+            document.location.href = 'admin_login.php';
         </script>";
     }else{        
         $feed = mysqli_query($db, "SELECT * FROM feedback_table");
