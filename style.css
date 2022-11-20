@@ -229,8 +229,10 @@ nav ul li a:hover {
     height: 500px;
     background-color: #ffffffde;
 }
-.feedback,
-.feedback form table tr td{
+.feedback{
+    width: 95%;
+}
+.feedback form table{
     width: 100%;
 }
 .feedback form {
@@ -329,6 +331,7 @@ nav ul li a:hover {
     margin-left: 80px;
     color: #4D96FF;
 }
+
 
 
 /* FORMULIR USER */
