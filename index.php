@@ -23,7 +23,7 @@
         <!-- CONTENT 1 -->
         <div class="role">
             <ul>
-                <h1 align="center">LOGIN SEBAGAI</h1>
+                <h1 align="center">LOGIN SEBAGAI</h1>  
             </ul>
             <ul>
                 <li align="center">
